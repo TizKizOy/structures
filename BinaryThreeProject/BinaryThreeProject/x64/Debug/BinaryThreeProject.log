@@ -1,0 +1,14 @@
+﻿  BinaryForm.cpp
+C:\Users\Захар\source\repos\BinaryThreeProject\BinaryThreeProject\BinaryForm.h(259,21): warning C4101: ksenzll: неиспользованная локальная переменная
+  (компиляция исходного файла "BinaryForm.cpp")
+  
+C:\Users\Захар\source\repos\BinaryThreeProject\BinaryThreeProject\BinaryForm.h(270,21): warning C4101: ksenzll: неиспользованная локальная переменная
+  (компиляция исходного файла "BinaryForm.cpp")
+  
+C:\Users\Захар\source\repos\BinaryThreeProject\BinaryThreeProject\BinaryForm.h(282,21): warning C4101: ksenzll: неиспользованная локальная переменная
+  (компиляция исходного файла "BinaryForm.cpp")
+  
+  BinaryTreeClass.cpp
+  Создание кода...
+  BinaryForm.obj : обнаружен модуль MSIL; для MSIL последовательная компоновка отключена; выполняется полная компоновка
+  BinaryThreeProject.vcxproj -> C:\Users\Захар\source\repos\BinaryThreeProject\x64\Debug\BinaryThreeProject.exe

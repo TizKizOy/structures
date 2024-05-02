@@ -1,0 +1,3 @@
+C:\Users\Захар\source\repos\BinaryThreeProject\BinaryThreeProject\x64\Debug\BinaryThreeProject.vcxproj.AssemblyReference.cache
+C:\Users\Захар\source\repos\BinaryThreeProject\BinaryThreeProject\x64\Debug\BinaryThreeProject.BinaryForm.resources
+C:\Users\Захар\source\repos\BinaryThreeProject\BinaryThreeProject\x64\Debug\BinaryThreeProject.vcxproj.GenerateResource.cache
