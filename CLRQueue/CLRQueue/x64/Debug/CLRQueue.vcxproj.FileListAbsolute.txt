@@ -1,0 +1,3 @@
+C:\Users\Захар\source\repos\CLRQueue\CLRQueue\x64\Debug\CLRQueue.vcxproj.AssemblyReference.cache
+C:\Users\Захар\source\repos\CLRQueue\CLRQueue\x64\Debug\CLRQueue.MyForm.resources
+C:\Users\Захар\source\repos\CLRQueue\CLRQueue\x64\Debug\CLRQueue.vcxproj.GenerateResource.cache

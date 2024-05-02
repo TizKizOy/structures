@@ -1,0 +1,21 @@
+﻿  MyForm.cpp
+C:\Users\Захар\source\repos\CLRStackForm\CLRStackForm\MyForm.h(121,13): error C2039: "MyStack": не является членом "CLRStack".
+  (компиляция исходного файла "MyForm.cpp")
+  C:\Users\Захар\source\repos\CLRStackForm\CLRStackForm\MyForm.h(2,11):
+   см. объявление "CLRStack"
+  
+C:\Users\Захар\source\repos\CLRStackForm\CLRStackForm\MyForm.h(121,21): error C3646: eva: неизвестный спецификатор переопределения
+  (компиляция исходного файла "MyForm.cpp")
+  
+C:\Users\Захар\source\repos\CLRStackForm\CLRStackForm\MyForm.h(121,24): error C4430: отсутствует спецификатор типа - предполагается int. Примечание. C++ не поддерживает int по умолчанию
+  (компиляция исходного файла "MyForm.cpp")
+  
+C:\Users\Захар\source\repos\CLRStackForm\CLRStackForm\MyForm.h(123,3): error C2065: eva: необъявленный идентификатор
+  (компиляция исходного файла "MyForm.cpp")
+  
+C:\Users\Захар\source\repos\CLRStackForm\CLRStackForm\MyForm.h(129,19): error C2065: eva: необъявленный идентификатор
+  (компиляция исходного файла "MyForm.cpp")
+  
+  Source.cpp
+  .NETFramework,Version=v4.7.2.AssemblyAttributes.cpp
+  Создание кода...

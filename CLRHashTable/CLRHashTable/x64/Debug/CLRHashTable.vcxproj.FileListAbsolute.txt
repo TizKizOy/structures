@@ -1,0 +1,9 @@
+C:\Users\Захар\source\repos\CLRHashTable\CLRHashTable\x64\Debug\CLRHashTable.vcxproj.AssemblyReference.cache
+C:\Users\Захар\source\repos\CLRHashTable\CLRHashTable\x64\Debug\CLRHashTable.HashTableForm.resources
+C:\Users\Захар\source\repos\CLRHashTable\CLRHashTable\x64\Debug\CLRHashTable.vcxproj.GenerateResource.cache
+D:\study\fa&p\CLRHashTable\CLRHashTable\x64\Debug\CLRHashTable.vcxproj.AssemblyReference.cache
+D:\study\fa&p\CLRHashTable\CLRHashTable\x64\Debug\CLRHashTable.HashTableForm.resources
+D:\study\fa&p\CLRHashTable\CLRHashTable\x64\Debug\CLRHashTable.vcxproj.GenerateResource.cache
+C:\Users\Захар\Desktop\CLRHashTable\CLRHashTable\x64\Debug\CLRHashTable.vcxproj.AssemblyReference.cache
+C:\Users\Захар\Desktop\CLRHashTable\CLRHashTable\x64\Debug\CLRHashTable.HashTableForm.resources
+C:\Users\Захар\Desktop\CLRHashTable\CLRHashTable\x64\Debug\CLRHashTable.vcxproj.GenerateResource.cache
