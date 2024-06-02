@@ -6,3 +6,8 @@ C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\x64\Debug\CLRStroyBat.S
 C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\x64\Debug\CLRStroyBat.MaterialsForm.resources
 C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\x64\Debug\CLRStroyBat.WorkForm.resources
 C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\x64\Debug\CLRStroyBat.SettingsForm.resources
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\x64\Debug\CLRStroyBat.ADDForm.resources
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\x64\Debug\CLRStroyBat.CountForm.resources
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\x64\Debug\CLRStroyBat.AddMaterialForm.resources
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\x64\Debug\CLRStroyBat.AddWorkForm.resources
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\x64\Debug\CLRStroyBat.vcxproj.ResolveComReference.cache

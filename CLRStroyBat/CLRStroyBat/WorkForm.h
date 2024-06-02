@@ -1,4 +1,6 @@
 #pragma once
+#include "Database.h"
+#include "CountForm.h"
 
 namespace CLRStroyBat {
 
@@ -19,6 +21,7 @@ namespace CLRStroyBat {
 		{
 			InitializeComponent();
 			this->StartPosition = FormStartPosition::CenterParent;
+
 			//
 			//TODO: äîáàâüòå êîä êîíñòðóêòîðà
 			//
@@ -40,8 +43,8 @@ namespace CLRStroyBat {
 	private: System::Windows::Forms::Button^ button5;
 
 	private: System::Windows::Forms::Button^ button3;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::Button^ button1;
+
+
 	private: System::Windows::Forms::TreeView^ treeView1;
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ dfsfsdfToolStripMenuItem;
@@ -64,9 +67,9 @@ namespace CLRStroyBat {
 	private: System::Windows::Forms::Label^ label2;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
-	private: System::Windows::Forms::ToolStripMenuItem^ äîáàâèòüToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ êîïèðîâàòüToolStripMenuItem;
-	private: System::Windows::Forms::ToolStripMenuItem^ èçìåíèòüToolStripMenuItem;
+
+
+
 	private: System::Windows::Forms::ToolStripMenuItem^ óäàëèòüToolStripMenuItem;
 	private: System::ComponentModel::IContainer^ components;
 
@@ -97,8 +100,6 @@ namespace CLRStroyBat {
 			System::Windows::Forms::TreeNode^ treeNode9 = (gcnew System::Windows::Forms::TreeNode(L"Òðàíñïîðòíûå ðàñõîäû"));
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->treeView1 = (gcnew System::Windows::Forms::TreeView());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->dfsfsdfToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
@@ -112,9 +113,6 @@ namespace CLRStroyBat {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
-			this->äîáàâèòüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->êîïèðîâàòüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
-			this->èçìåíèòüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->óäàëèòüToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
@@ -133,31 +131,13 @@ namespace CLRStroyBat {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(1951, 230);
+			this->button3->Location = System::Drawing::Point(1951, 628);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(160, 60);
 			this->button3->TabIndex = 9;
 			this->button3->Text = L"Óäàëèòü";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &WorkForm::button3_Click);
-			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(1951, 155);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(160, 60);
-			this->button2->TabIndex = 8;
-			this->button2->Text = L"Èçìåíèòü";
-			this->button2->UseVisualStyleBackColor = true;
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(1951, 80);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(160, 60);
-			this->button1->TabIndex = 7;
-			this->button1->Text = L"Äîáàâèòü";
-			this->button1->UseVisualStyleBackColor = true;
 			// 
 			// treeView1
 			// 
@@ -214,9 +194,10 @@ namespace CLRStroyBat {
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->dfsfsdfToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(2237, 49);
+			this->menuStrip1->Size = System::Drawing::Size(2237, 45);
 			this->menuStrip1->TabIndex = 20;
 			this->menuStrip1->Text = L"menuStrip1";
+			this->menuStrip1->ItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &WorkForm::menuStrip1_ItemClicked);
 			// 
 			// dfsfsdfToolStripMenuItem
 			// 
@@ -224,7 +205,7 @@ namespace CLRStroyBat {
 				static_cast<System::Byte>(204)));
 			this->dfsfsdfToolStripMenuItem->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->dfsfsdfToolStripMenuItem->Name = L"dfsfsdfToolStripMenuItem";
-			this->dfsfsdfToolStripMenuItem->Size = System::Drawing::Size(136, 45);
+			this->dfsfsdfToolStripMenuItem->Size = System::Drawing::Size(136, 41);
 			this->dfsfsdfToolStripMenuItem->Text = L"Ãëàâíàÿ";
 			// 
 			// label4
@@ -260,7 +241,7 @@ namespace CLRStroyBat {
 			// 
 			this->comboBox2->FormattingEnabled = true;
 			this->comboBox2->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"Çàêóïêà", L"Ñòàíäàðò" });
-			this->comboBox2->Location = System::Drawing::Point(1743, 5);
+			this->comboBox2->Location = System::Drawing::Point(1743, 7);
 			this->comboBox2->Name = L"comboBox2";
 			this->comboBox2->Size = System::Drawing::Size(160, 33);
 			this->comboBox2->TabIndex = 27;
@@ -286,13 +267,13 @@ namespace CLRStroyBat {
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView2->Location = System::Drawing::Point(379, 59);
 			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->ReadOnly = true;
 			this->dataGridView2->RowHeadersWidth = 82;
 			this->dataGridView2->RowTemplate->Height = 33;
 			this->dataGridView2->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->dataGridView2->Size = System::Drawing::Size(1505, 711);
 			this->dataGridView2->TabIndex = 33;
 			this->dataGridView2->CellMouseUp += gcnew System::Windows::Forms::DataGridViewCellMouseEventHandler(this, &WorkForm::dataGridView2_CellMouseUp);
-			this->dataGridView2->CellValueChanged += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &WorkForm::dataGridView2_CellValueChanged);
 			// 
 			// button6
 			// 
@@ -324,35 +305,14 @@ namespace CLRStroyBat {
 			// contextMenuStrip1
 			// 
 			this->contextMenuStrip1->ImageScalingSize = System::Drawing::Size(32, 32);
-			this->contextMenuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
-				this->äîáàâèòüToolStripMenuItem,
-					this->êîïèðîâàòüToolStripMenuItem, this->èçìåíèòüToolStripMenuItem, this->óäàëèòüToolStripMenuItem
-			});
+			this->contextMenuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->óäàëèòüToolStripMenuItem });
 			this->contextMenuStrip1->Name = L"contextMenuStrip1";
-			this->contextMenuStrip1->Size = System::Drawing::Size(220, 156);
-			// 
-			// äîáàâèòüToolStripMenuItem
-			// 
-			this->äîáàâèòüToolStripMenuItem->Name = L"äîáàâèòüToolStripMenuItem";
-			this->äîáàâèòüToolStripMenuItem->Size = System::Drawing::Size(219, 38);
-			this->äîáàâèòüToolStripMenuItem->Text = L"Äîáàâèòü";
-			// 
-			// êîïèðîâàòüToolStripMenuItem
-			// 
-			this->êîïèðîâàòüToolStripMenuItem->Name = L"êîïèðîâàòüToolStripMenuItem";
-			this->êîïèðîâàòüToolStripMenuItem->Size = System::Drawing::Size(219, 38);
-			this->êîïèðîâàòüToolStripMenuItem->Text = L"Êîïèðîâàòü";
-			// 
-			// èçìåíèòüToolStripMenuItem
-			// 
-			this->èçìåíèòüToolStripMenuItem->Name = L"èçìåíèòüToolStripMenuItem";
-			this->èçìåíèòüToolStripMenuItem->Size = System::Drawing::Size(219, 38);
-			this->èçìåíèòüToolStripMenuItem->Text = L"Èçìåíèòü";
+			this->contextMenuStrip1->Size = System::Drawing::Size(177, 42);
 			// 
 			// óäàëèòüToolStripMenuItem
 			// 
 			this->óäàëèòüToolStripMenuItem->Name = L"óäàëèòüToolStripMenuItem";
-			this->óäàëèòüToolStripMenuItem->Size = System::Drawing::Size(219, 38);
+			this->óäàëèòüToolStripMenuItem->Size = System::Drawing::Size(176, 38);
 			this->óäàëèòüToolStripMenuItem->Text = L"Óäàëèòü";
 			this->óäàëèòüToolStripMenuItem->Click += gcnew System::EventHandler(this, &WorkForm::óäàëèòüToolStripMenuItem_Click);
 			// 
@@ -373,8 +333,6 @@ namespace CLRStroyBat {
 			this->Controls->Add(this->treeView1);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->button1);
 			this->Controls->Add(this->menuStrip1);
 			this->MainMenuStrip = this->menuStrip1;
 			this->Name = L"WorkForm";
@@ -392,6 +350,36 @@ namespace CLRStroyBat {
 #pragma endregion
 		DataTable^ dtR;
 		int count = 0;
+		Database^ db = gcnew Database();
+
+	private: void ÑonfirmationOfTheExit()
+	{
+		auto result = MessageBox::Show(
+			"Âû äåéñòâèòåëüíî õîòèòå âûéòè èç ïðîãðàììû?",
+			"Ïîäòâåðäèòå âûõîä",
+			MessageBoxButtons::YesNo,
+			MessageBoxIcon::Question);
+		if (result == System::Windows::Forms::DialogResult::Yes) {
+			this->Close();
+		}
+	}
+
+	private: void ÑonfirmationOfTheDelete()
+	{
+		auto result = MessageBox::Show(
+			"Âû äåéñòâèòåëüíî õîòèòå óäàëèòü âûáðàííûé ôðàãìåíò?",
+			"Ïîäòâåðäèòå óäàëåíèå",
+			MessageBoxButtons::YesNo,
+			MessageBoxIcon::Question);
+		if (result == System::Windows::Forms::DialogResult::Yes) {
+			dataGridView2->Rows->RemoveAt(dataGridView2->CurrentRow->Index);
+			dataGridView2->Refresh();
+			count--;
+			label4->Text = count.ToString();
+		}
+	}
+
+
 	private: void ShowCMS(System::Windows::Forms::MouseEventArgs^ e) {
 		if (e->Button == System::Windows::Forms::MouseButtons::Right) {
 			contextMenuStrip1->Show(
@@ -407,17 +395,12 @@ namespace CLRStroyBat {
 		dataGridView2->AutoResizeColumns();//àâòîïîäáîð øèðèíû
 		dataGridView2->RowHeadersWidth = 5; // óìåíüøåíèå êðàéíåãî ëåâîãî ñòîëáöà ïî øèðèíå
 
-		SqlConnection^ Con = gcnew SqlConnection("Data Source=TIZKIZOY\\SQLEXPRESS;Initial Catalog=Plitka;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-		Con->Open();
-		String^ querystring = "select * from Worki";
-		SqlCommand^ command = gcnew SqlCommand(querystring, Con);
-		SqlDataAdapter^ adapter = gcnew SqlDataAdapter(command);
-		dtR = gcnew DataTable();
-		adapter->Fill(dtR);
-		dataGridView2->DataSource = dtR;
 
-		
-		for (int i = 0; i < dtR->Rows->Count - 9; i++)
+		db->openConnection();
+		dataGridView2->DataSource = db->getTableWork();
+		db->closeConnection();
+
+		for (int i = 0; i < dataGridView2->Rows->Count - 9; i++)
 		{
 			count++;
 		}
@@ -425,14 +408,7 @@ namespace CLRStroyBat {
 	}
 
 	private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-		auto result = MessageBox::Show(
-			"Âû äåéñòâèòåëüíî õîòèòå âûéòè èç ïðîãðàììû?",
-			"Ïîäòâåðäèòå âûõîä",
-			MessageBoxButtons::YesNo,
-			MessageBoxIcon::Question);
-		if (result == System::Windows::Forms::DialogResult::Yes) {
-			this->Close();
-		}
+		ÑonfirmationOfTheExit();
 	}
 
 	private: System::Void treeView1_AfterSelect(System::Object^ sender, System::Windows::Forms::TreeViewEventArgs^ e) {
@@ -441,7 +417,6 @@ namespace CLRStroyBat {
 
 		switch (id)
 		{
-
 		case 0:
 		{
 			dataGridView2->ClearSelection();
@@ -501,18 +476,6 @@ namespace CLRStroyBat {
 			MessageBox::Show("Òû ãäå-òî îøèáñÿ â êîäå");
 		}
 		}
-		//for each (DataGridViewRow row in this->dataGridView2->Rows)
-		//{
-		//	int rowId = (int)row.Tag;
-		//	if (rowId == id)
-		//	{
-		//		row.Selected = true;
-		//	}
-		//	else
-		//	{
-		//		row.Selected = false; //discard other rows 
-		//	}
-		//}
 	}
 
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -530,17 +493,7 @@ namespace CLRStroyBat {
 		}
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-		auto result = MessageBox::Show(
-			"Âû äåéñòâèòåëüíî õîòèòå óäàëèòü âûáðàííûé ôðàãìåíò?",
-			"Ïîäòâåðäèòå óäàëåíèå",
-			MessageBoxButtons::YesNo,
-			MessageBoxIcon::Question);
-		if (result == System::Windows::Forms::DialogResult::Yes) {
-			dataGridView2->Rows->RemoveAt(dataGridView2->CurrentRow->Index);
-			dataGridView2->Refresh();
-			count--;
-			label4->Text = count.ToString();
-		}
+		ÑonfirmationOfTheDelete();
 	}
 
 	private: System::Void WorkForm_MouseUp(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
@@ -548,18 +501,7 @@ namespace CLRStroyBat {
 	}
 
 	private: System::Void óäàëèòüToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		int index = dataGridView2->SelectedCells[0]->RowIndex;
-		auto result = MessageBox::Show(
-			"Âû äåéñòâèòåëüíî õîòèòå óäàëèòü âûáðàííûé ôðàãìåíò?",
-			"Ïîäòâåðäèòå óäàëåíèå",
-			MessageBoxButtons::YesNo,
-			MessageBoxIcon::Question);
-		if (result == System::Windows::Forms::DialogResult::Yes) {
-			dataGridView2->Rows->RemoveAt(index);
-			count--;
-			label4->Text = count.ToString();
-		}
-		
+		ÑonfirmationOfTheDelete();
 	}
 	private: System::Void dataGridView2_CellMouseUp(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) {
 		if (e->Button == System::Windows::Forms::MouseButtons::Right)
@@ -567,13 +509,26 @@ namespace CLRStroyBat {
 			this->ShowCMS(e);
 		}
 	}
+
+
 	private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		String^ selectedValue = this->comboBox2->SelectedItem->ToString();
+
+		if (selectedValue == "Çàêóïêà")
+		{
+			db->openConnection();
+			dataGridView2->DataSource = db->getTableWorkZakup();
+			db->closeConnection();
+		}
+
+		else if (selectedValue == "Ñòàíäàðò")
+		{
+			db->openConnection();
+			dataGridView2->DataSource = db->getTableWork();
+			db->closeConnection();
+		}
 	}
-
-	
-
-private: System::Void dataGridView2_CellValueChanged(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-
+private: System::Void menuStrip1_ItemClicked(System::Object^ sender, System::Windows::Forms::ToolStripItemClickedEventArgs^ e) {
 }
 };
 }

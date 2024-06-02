@@ -119,7 +119,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ADDForm.cpp" />
+    <ClCompile Include="AddMaterialForm.cpp" />
+    <ClCompile Include="AddWorkForm.cpp" />
+    <ClCompile Include="CountForm.cpp" />
     <ClCompile Include="Database.cpp" />
+    <ClCompile Include="FormData.cpp" />
     <ClCompile Include="MaterialsForm.cpp" />
     <ClCompile Include="MenuForm.cpp" />
     <ClCompile Include="PlitkaForm.cpp" />
@@ -128,7 +133,21 @@
     <ClCompile Include="WorkForm.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ADDForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AddMaterialForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="AddWorkForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="CountForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Database.h" />
+    <ClInclude Include="Delegat.h" />
+    <ClInclude Include="FormData.h" />
     <ClInclude Include="MaterialsForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -149,6 +168,18 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ADDForm.resx">
+      <DependentUpon>ADDForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddMaterialForm.resx">
+      <DependentUpon>AddMaterialForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddWorkForm.resx">
+      <DependentUpon>AddWorkForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CountForm.resx">
+      <DependentUpon>CountForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MaterialsForm.resx">
       <DependentUpon>MaterialsForm.h</DependentUpon>
     </EmbeddedResource>
@@ -167,6 +198,17 @@
     <EmbeddedResource Include="WorkForm.resx">
       <DependentUpon>WorkForm.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Word.8.7">
+      <VersionMinor>7</VersionMinor>
+      <VersionMajor>8</VersionMajor>
+      <Guid>00020905-0000-0000-c000-000000000046</Guid>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>false</Isolated>
+      <EmbedInteropTypes>true</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

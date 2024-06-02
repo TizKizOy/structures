@@ -39,7 +39,7 @@ namespace CLRStroyBat {
 			//this->Controls->Add(openChildButton);
 
 
-			
+
 		}
 
 		//void OpenChildForm(Object^ sender, EventArgs^ e)
@@ -116,6 +116,7 @@ namespace CLRStroyBat {
 			this->menuStrip1->Size = System::Drawing::Size(2053, 49);
 			this->menuStrip1->TabIndex = 0;
 			this->menuStrip1->Text = L"menuStrip1";
+			this->menuStrip1->ItemClicked += gcnew System::Windows::Forms::ToolStripItemClickedEventHandler(this, &MenuForm::menuStrip1_ItemClicked);
 			// 
 			// îñíîâíîåToolStripMenuItem
 			// 
@@ -135,12 +136,14 @@ namespace CLRStroyBat {
 			this->íàñòðîéêàÐàáî÷åãîÌåñòàToolStripMenuItem->Name = L"íàñòðîéêàÐàáî÷åãîÌåñòàToolStripMenuItem";
 			this->íàñòðîéêàÐàáî÷åãîÌåñòàToolStripMenuItem->Size = System::Drawing::Size(524, 50);
 			this->íàñòðîéêàÐàáî÷åãîÌåñòàToolStripMenuItem->Text = L"Íàñòðîéêà ðàáî÷åãî ìåñòà";
+			this->íàñòðîéêàÐàáî÷åãîÌåñòàToolStripMenuItem->Click += gcnew System::EventHandler(this, &MenuForm::íàñòðîéêàÐàáî÷åãîÌåñòàToolStripMenuItem_Click);
 			// 
 			// èçìåíåíèåÊóðñàÂàëþòToolStripMenuItem
 			// 
 			this->èçìåíåíèåÊóðñàÂàëþòToolStripMenuItem->Name = L"èçìåíåíèåÊóðñàÂàëþòToolStripMenuItem";
 			this->èçìåíåíèåÊóðñàÂàëþòToolStripMenuItem->Size = System::Drawing::Size(524, 50);
 			this->èçìåíåíèåÊóðñàÂàëþòToolStripMenuItem->Text = L"Èçìåíåíèå êóðñà âàëþò";
+			this->èçìåíåíèåÊóðñàÂàëþòToolStripMenuItem->Click += gcnew System::EventHandler(this, &MenuForm::èçìåíåíèåÊóðñàÂàëþòToolStripMenuItem_Click);
 			// 
 			// ñìåòûToolStripMenuItem1
 			// 
@@ -208,10 +211,12 @@ namespace CLRStroyBat {
 #pragma endregion	
 	private: System::Void îñíîâíîåToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+
 	private: System::Void ñìåòûToolStripMenuItem1_Click(System::Object^ sender, System::EventArgs^ e) {
 		SmetaForm^ f3 = gcnew SmetaForm();
 		f3->Show();
 	}
+
 	private: System::Void MenuForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->Text = "Ìåíþ";// Çàäà¸ò íàçâàíèå ôîðìû
 		this->Top = 0; //Çàäà¸ò ðàññòîÿíèå âåðõíåé ãðàíèöû
@@ -219,11 +224,11 @@ namespace CLRStroyBat {
 		this->Width = Screen::PrimaryScreen->WorkingArea.Width;
 		this->Height = Screen::PrimaryScreen->WorkingArea.Height;
 
-
 		PlitkaForm^ f4 = gcnew PlitkaForm();
 		f4->Show();
 
 	}
+
 	private: System::Void âûõîäToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		auto result = MessageBox::Show(
 			"Âû äåéñòâèòåëüíî õîòèòå âûéòè èç ïðîãðàììû?",
@@ -236,10 +241,9 @@ namespace CLRStroyBat {
 	}
 
 	private: System::Void ðàáîòûToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		
-	
+
 		/*OpenChildForm(sender, e);*/
-		
+
 		WorkForm^ f1 = gcnew WorkForm();
 		f1->Show();
 		//MenuForm^ f6 = gcnew MenuForm();
@@ -255,15 +259,38 @@ namespace CLRStroyBat {
 		//f6->MinimumSize = f1->ClientSize;
 		//f1->Show();
 	}
+
 	private: System::Void ìàòåðèàëûToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		MaterialsForm^ f2 = gcnew MaterialsForm();
 		f2->Show();
 	}
+
 	private: System::Void íàñòðîéêèToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
 		SettingsForm^ f5 = gcnew SettingsForm();
-		f5->Show();
-
-
+		if (f5->Visible == true)
+		{
+			f5->Close();
+		}
+		else f5->Show();
 	}
-	};
+
+	private: System::Void íàñòðîéêàÐàáî÷åãîÌåñòàToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		SettingsForm^ f5 = gcnew SettingsForm();
+		if (f5->Visible == true)
+		{
+			f5->Close();
+		}
+		else f5->Show();
+	}
+	private: System::Void èçìåíåíèåÊóðñàÂàëþòToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		SettingsForm^ f5 = gcnew SettingsForm();
+		if (f5->Visible == true)
+		{
+			f5->Close();
+		}
+		else f5->Show();
+	}
+private: System::Void menuStrip1_ItemClicked(System::Object^ sender, System::Windows::Forms::ToolStripItemClickedEventArgs^ e) {
+}
+};
 }

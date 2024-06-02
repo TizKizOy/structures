@@ -23,6 +23,7 @@ namespace CLRStroyBat {
 		DataTable^ dtRegistr;
 		DataTable^ dtWork;
 	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::Button^ button2;
 	public:
 		DataTable^ dtMaterials;
 
@@ -32,7 +33,7 @@ namespace CLRStroyBat {
 			InitializeComponent();
 			StartPosition = FormStartPosition::CenterScreen;//чтобы форма запускалась по центру экрана
 
-			
+
 			dtRegistr = gcnew DataTable();
 			dtWork = gcnew DataTable();
 			dtMaterials = gcnew DataTable();
@@ -80,15 +81,16 @@ namespace CLRStroyBat {
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
 			this->button1->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.125F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->button1->Location = System::Drawing::Point(341, 315);
+			this->button1->Location = System::Drawing::Point(273, 316);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(189, 59);
+			this->button1->Size = System::Drawing::Size(194, 59);
 			this->button1->TabIndex = 0;
 			this->button1->Text = L"Продолжить";
 			this->button1->UseVisualStyleBackColor = true;
@@ -147,11 +149,24 @@ namespace CLRStroyBat {
 			this->textBox2->TabIndex = 5;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &PlitkaForm::textBox2_TextChanged);
 			// 
+			// button2
+			// 
+			this->button2->Font = (gcnew System::Drawing::Font(L"Times New Roman", 10.125F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->button2->Location = System::Drawing::Point(491, 316);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(131, 59);
+			this->button2->TabIndex = 6;
+			this->button2->Text = L"Отмена";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &PlitkaForm::button2_Click);
+			// 
 			// PlitkaForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(885, 444);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->textBox2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label3);
@@ -172,13 +187,9 @@ namespace CLRStroyBat {
 		this->Text = "Авторизация";// Задаёт название формы
 		if (textBox2->Text == "")
 		{
-			textBox2->PasswordChar = '\0';
 			textBox1->MaxLength = 50;
 			textBox2->MaxLength = 50;
-			//	//textBox2->Text = "Введите свой пароль";//подсказка
-			//	//textBox2->ForeColor = Color::Gray;
 		}
-
 		try {
 			SqlConnection^ Con = gcnew SqlConnection("Data Source=TIZKIZOY\\SQLEXPRESS;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 			Con->Open();
@@ -207,23 +218,15 @@ namespace CLRStroyBat {
 		}
 		else MessageBox::Show("Такого аккаунта не существует!", "Ошибка!", MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		Con->Close();
-		/*MySqlConnection^ dbConn = gcnew MySqlConnection("Server=Plitka; Database=плитка; Uid=root; Pwd=Lavka1997;");
-		MySqlCommand^ dbCmd = gcnew MySqlCommand("SELECT * FROM TableName", dbConn);
-		MySqlDataAdapter^ dataAdapter = gcnew MySqlDataAdapter(dbCmd);
-		DataSet^ dataSet = gcnew DataSet();
-
-		dbConn->Open();
-		dataAdapter->Fill(dataSet);
-		dbConn->Close();
-
-		DataGridView1->DataSource = dataSet->Tables[0];*/
-
 	}
 
 	private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 		textBox2->PasswordChar = '*';
 	}
-};
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		Application::Exit();
+	}
+	};
 
 
 }

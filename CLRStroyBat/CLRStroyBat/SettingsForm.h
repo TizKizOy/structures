@@ -42,7 +42,7 @@ namespace CLRStroyBat {
 	private: System::Windows::Forms::TabPage^ tabPage4;
 	private: System::Windows::Forms::TabPage^ tabPage5;
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
+
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::ColorDialog^ colorDialog1;
@@ -124,6 +124,9 @@ private: System::Windows::Forms::TextBox^ textBox7;
 private: System::Windows::Forms::Label^ label28;
 private: System::Windows::Forms::Label^ label27;
 private: System::Windows::Forms::Label^ label24;
+private: System::Windows::Forms::Label^ label30;
+private: System::Windows::Forms::TextBox^ textBox10;
+private: System::Windows::Forms::Label^ label29;
 
 
 
@@ -184,6 +187,9 @@ private: System::Windows::Forms::Label^ label24;
 			this->radioButton9 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton8 = (gcnew System::Windows::Forms::RadioButton());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->label30 = (gcnew System::Windows::Forms::Label());
+			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
+			this->label29 = (gcnew System::Windows::Forms::Label());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->label14 = (gcnew System::Windows::Forms::Label());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
@@ -199,6 +205,15 @@ private: System::Windows::Forms::Label^ label24;
 			this->checkBox4 = (gcnew System::Windows::Forms::CheckBox());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
+			this->label28 = (gcnew System::Windows::Forms::Label());
+			this->label27 = (gcnew System::Windows::Forms::Label());
+			this->label24 = (gcnew System::Windows::Forms::Label());
+			this->label26 = (gcnew System::Windows::Forms::Label());
+			this->label25 = (gcnew System::Windows::Forms::Label());
+			this->label23 = (gcnew System::Windows::Forms::Label());
+			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->label22 = (gcnew System::Windows::Forms::Label());
 			this->label21 = (gcnew System::Windows::Forms::Label());
 			this->label20 = (gcnew System::Windows::Forms::Label());
@@ -206,20 +221,10 @@ private: System::Windows::Forms::Label^ label24;
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->colorDialog1 = (gcnew System::Windows::Forms::ColorDialog());
 			this->fontDialog1 = (gcnew System::Windows::Forms::FontDialog());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
-			this->label23 = (gcnew System::Windows::Forms::Label());
-			this->label25 = (gcnew System::Windows::Forms::Label());
-			this->label26 = (gcnew System::Windows::Forms::Label());
-			this->label24 = (gcnew System::Windows::Forms::Label());
-			this->label27 = (gcnew System::Windows::Forms::Label());
-			this->label28 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
@@ -641,6 +646,9 @@ private: System::Windows::Forms::Label^ label24;
 			// 
 			// tabPage3
 			// 
+			this->tabPage3->Controls->Add(this->label30);
+			this->tabPage3->Controls->Add(this->textBox10);
+			this->tabPage3->Controls->Add(this->label29);
 			this->tabPage3->Controls->Add(this->label15);
 			this->tabPage3->Controls->Add(this->label14);
 			this->tabPage3->Controls->Add(this->comboBox1);
@@ -657,6 +665,34 @@ private: System::Windows::Forms::Label^ label24;
 			this->tabPage3->TabIndex = 2;
 			this->tabPage3->Text = L"Умолчанию";
 			this->tabPage3->UseVisualStyleBackColor = true;
+			// 
+			// label30
+			// 
+			this->label30->AutoSize = true;
+			this->label30->Location = System::Drawing::Point(775, 295);
+			this->label30->Name = L"label30";
+			this->label30->Size = System::Drawing::Size(33, 29);
+			this->label30->TabIndex = 19;
+			this->label30->Text = L"р.";
+			// 
+			// textBox10
+			// 
+			this->textBox10->Location = System::Drawing::Point(669, 289);
+			this->textBox10->Name = L"textBox10";
+			this->textBox10->Size = System::Drawing::Size(100, 35);
+			this->textBox10->TabIndex = 18;
+			this->textBox10->Text = L"3";
+			// 
+			// label29
+			// 
+			this->label29->AutoSize = true;
+			this->label29->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.125F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label29->Location = System::Drawing::Point(449, 289);
+			this->label29->Name = L"label29";
+			this->label29->Size = System::Drawing::Size(196, 31);
+			this->label29->TabIndex = 17;
+			this->label29->Text = L"Курс доллара:";
 			// 
 			// label15
 			// 
@@ -718,11 +754,11 @@ private: System::Windows::Forms::Label^ label24;
 			this->label11->AutoSize = true;
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label11->Location = System::Drawing::Point(208, 241);
+			this->label11->Location = System::Drawing::Point(208, 239);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(429, 33);
+			this->label11->Size = System::Drawing::Size(437, 33);
 			this->label11->TabIndex = 6;
-			this->label11->Text = L"Интервал списков документов\r\n";
+			this->label11->Text = L"Интервал списков документов:\r\n";
 			// 
 			// label10
 			// 
@@ -731,9 +767,9 @@ private: System::Windows::Forms::Label^ label24;
 				static_cast<System::Byte>(204)));
 			this->label10->Location = System::Drawing::Point(118, 190);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(526, 33);
+			this->label10->Size = System::Drawing::Size(534, 33);
 			this->label10->TabIndex = 5;
-			this->label10->Text = L"НДС при создании работ/материалов\r\n";
+			this->label10->Text = L"НДС при создании работ/материалов:\r\n";
 			// 
 			// label9
 			// 
@@ -830,6 +866,94 @@ private: System::Windows::Forms::Label^ label24;
 			this->tabPage5->Text = L"Шрифты";
 			this->tabPage5->UseVisualStyleBackColor = true;
 			// 
+			// label28
+			// 
+			this->label28->AutoSize = true;
+			this->label28->Location = System::Drawing::Point(347, 408);
+			this->label28->Name = L"label28";
+			this->label28->Size = System::Drawing::Size(92, 29);
+			this->label28->TabIndex = 20;
+			this->label28->Text = L"label28";
+			// 
+			// label27
+			// 
+			this->label27->AutoSize = true;
+			this->label27->Location = System::Drawing::Point(347, 360);
+			this->label27->Name = L"label27";
+			this->label27->Size = System::Drawing::Size(92, 29);
+			this->label27->TabIndex = 19;
+			this->label27->Text = L"label27";
+			// 
+			// label24
+			// 
+			this->label24->AutoSize = true;
+			this->label24->Location = System::Drawing::Point(347, 317);
+			this->label24->Name = L"label24";
+			this->label24->Size = System::Drawing::Size(92, 29);
+			this->label24->TabIndex = 18;
+			this->label24->Text = L"label24";
+			// 
+			// label26
+			// 
+			this->label26->AutoSize = true;
+			this->label26->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label26->Location = System::Drawing::Point(720, 408);
+			this->label26->Name = L"label26";
+			this->label26->Size = System::Drawing::Size(46, 33);
+			this->label26->TabIndex = 17;
+			this->label26->Text = L"px";
+			// 
+			// label25
+			// 
+			this->label25->AutoSize = true;
+			this->label25->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label25->Location = System::Drawing::Point(720, 360);
+			this->label25->Name = L"label25";
+			this->label25->Size = System::Drawing::Size(46, 33);
+			this->label25->TabIndex = 16;
+			this->label25->Text = L"px";
+			this->label25->Click += gcnew System::EventHandler(this, &SettingsForm::label25_Click);
+			// 
+			// label23
+			// 
+			this->label23->AutoSize = true;
+			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label23->Location = System::Drawing::Point(720, 306);
+			this->label23->Name = L"label23";
+			this->label23->Size = System::Drawing::Size(46, 33);
+			this->label23->TabIndex = 15;
+			this->label23->Text = L"px";
+			// 
+			// textBox9
+			// 
+			this->textBox9->Location = System::Drawing::Point(673, 405);
+			this->textBox9->Multiline = true;
+			this->textBox9->Name = L"textBox9";
+			this->textBox9->Size = System::Drawing::Size(41, 40);
+			this->textBox9->TabIndex = 14;
+			this->textBox9->Text = L"26";
+			// 
+			// textBox8
+			// 
+			this->textBox8->Location = System::Drawing::Point(673, 357);
+			this->textBox8->Multiline = true;
+			this->textBox8->Name = L"textBox8";
+			this->textBox8->Size = System::Drawing::Size(41, 40);
+			this->textBox8->TabIndex = 13;
+			this->textBox8->Text = L"26";
+			// 
+			// textBox7
+			// 
+			this->textBox7->Location = System::Drawing::Point(673, 306);
+			this->textBox7->Multiline = true;
+			this->textBox7->Name = L"textBox7";
+			this->textBox7->Size = System::Drawing::Size(41, 40);
+			this->textBox7->TabIndex = 12;
+			this->textBox7->Text = L"26";
+			// 
 			// label22
 			// 
 			this->label22->AutoSize = true;
@@ -906,15 +1030,6 @@ private: System::Windows::Forms::Label^ label24;
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &SettingsForm::button1_Click);
 			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(164, 739);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(170, 55);
-			this->button2->TabIndex = 2;
-			this->button2->Text = L"Что-то";
-			this->button2->UseVisualStyleBackColor = true;
-			// 
 			// button3
 			// 
 			this->button3->Location = System::Drawing::Point(706, 739);
@@ -923,6 +1038,7 @@ private: System::Windows::Forms::Label^ label24;
 			this->button3->TabIndex = 3;
 			this->button3->Text = L"Ок";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &SettingsForm::button3_Click);
 			// 
 			// button4
 			// 
@@ -932,98 +1048,11 @@ private: System::Windows::Forms::Label^ label24;
 			this->button4->TabIndex = 4;
 			this->button4->Text = L"Отмена";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &SettingsForm::button4_Click);
 			// 
 			// fontDialog1
 			// 
 			this->fontDialog1->Apply += gcnew System::EventHandler(this, &SettingsForm::fontDialog1_Apply);
-			// 
-			// textBox7
-			// 
-			this->textBox7->Location = System::Drawing::Point(673, 306);
-			this->textBox7->Multiline = true;
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(41, 40);
-			this->textBox7->TabIndex = 12;
-			this->textBox7->Text = L"26";
-			// 
-			// textBox8
-			// 
-			this->textBox8->Location = System::Drawing::Point(673, 357);
-			this->textBox8->Multiline = true;
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(41, 40);
-			this->textBox8->TabIndex = 13;
-			this->textBox8->Text = L"26";
-			// 
-			// textBox9
-			// 
-			this->textBox9->Location = System::Drawing::Point(673, 405);
-			this->textBox9->Multiline = true;
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(41, 40);
-			this->textBox9->TabIndex = 14;
-			this->textBox9->Text = L"26";
-			// 
-			// label23
-			// 
-			this->label23->AutoSize = true;
-			this->label23->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label23->Location = System::Drawing::Point(720, 306);
-			this->label23->Name = L"label23";
-			this->label23->Size = System::Drawing::Size(46, 33);
-			this->label23->TabIndex = 15;
-			this->label23->Text = L"px";
-			// 
-			// label25
-			// 
-			this->label25->AutoSize = true;
-			this->label25->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label25->Location = System::Drawing::Point(720, 360);
-			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(46, 33);
-			this->label25->TabIndex = 16;
-			this->label25->Text = L"px";
-			this->label25->Click += gcnew System::EventHandler(this, &SettingsForm::label25_Click);
-			// 
-			// label26
-			// 
-			this->label26->AutoSize = true;
-			this->label26->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->label26->Location = System::Drawing::Point(720, 408);
-			this->label26->Name = L"label26";
-			this->label26->Size = System::Drawing::Size(46, 33);
-			this->label26->TabIndex = 17;
-			this->label26->Text = L"px";
-			// 
-			// label24
-			// 
-			this->label24->AutoSize = true;
-			this->label24->Location = System::Drawing::Point(347, 317);
-			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(92, 29);
-			this->label24->TabIndex = 18;
-			this->label24->Text = L"label24";
-			// 
-			// label27
-			// 
-			this->label27->AutoSize = true;
-			this->label27->Location = System::Drawing::Point(347, 360);
-			this->label27->Name = L"label27";
-			this->label27->Size = System::Drawing::Size(92, 29);
-			this->label27->TabIndex = 19;
-			this->label27->Text = L"label27";
-			// 
-			// label28
-			// 
-			this->label28->AutoSize = true;
-			this->label28->Location = System::Drawing::Point(347, 408);
-			this->label28->Name = L"label28";
-			this->label28->Size = System::Drawing::Size(92, 29);
-			this->label28->TabIndex = 20;
-			this->label28->Text = L"label28";
 			// 
 			// SettingsForm
 			// 
@@ -1032,7 +1061,6 @@ private: System::Windows::Forms::Label^ label24;
 			this->ClientSize = System::Drawing::Size(1006, 831);
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->tabControl1);
 			this->Name = L"SettingsForm";
@@ -1104,6 +1132,12 @@ private: System::Void fontDialog1_Apply(System::Object^ sender, System::EventArg
 	//}
 }
 private: System::Void label25_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->Close();
 }
 };
 }
