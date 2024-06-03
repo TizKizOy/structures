@@ -38,6 +38,30 @@ namespace CLRStroyBat {
 	private: System::Windows::Forms::ToolStripMenuItem^ удалитьСтрокуToolStripMenuItem;
 	private: System::Windows::Forms::Button^ button7;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn4;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn5;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn6;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn7;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn8;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column6;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column16;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column8;
+
+
+
+
+
+
+
+
 		   String^ dataId;
 	public:
 		ADDForm(String^ id, array<String^>^ data, array<String^>^ dataNum) {
@@ -50,21 +74,21 @@ namespace CLRStroyBat {
 			DataFromDatabaseWorks();
 			DataFromDatabaseMaterials();
 		}
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn2;
+
 	public:
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn3;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn4;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn5;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn6;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn7;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn8;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column6;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column16;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
+
+
+
+
+
+
+
+
+
+
+
+
+
 	public:
 		ADDForm(returnTextBoxData^ sender, array<String^>^ data, array<String^>^ dataNum)
 		{
@@ -198,16 +222,10 @@ namespace CLRStroyBat {
 			this->dataGridViewTextBoxColumn6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->treeView1 = (gcnew System::Windows::Forms::TreeView());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
-			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column16 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
@@ -226,6 +244,14 @@ namespace CLRStroyBat {
 			this->удалитьСтрокуToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column16 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
@@ -428,10 +454,10 @@ namespace CLRStroyBat {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(7) {
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {
 				this->dataGridViewTextBoxColumn2,
 					this->dataGridViewTextBoxColumn3, this->dataGridViewTextBoxColumn4, this->dataGridViewTextBoxColumn5, this->dataGridViewTextBoxColumn6,
-					this->dataGridViewTextBoxColumn7, this->dataGridViewTextBoxColumn8
+					this->dataGridViewTextBoxColumn7, this->dataGridViewTextBoxColumn8, this->Column1
 			});
 			this->dataGridView1->Location = System::Drawing::Point(263, 18);
 			this->dataGridView1->Name = L"dataGridView1";
@@ -498,6 +524,14 @@ namespace CLRStroyBat {
 			this->dataGridViewTextBoxColumn8->ReadOnly = true;
 			this->dataGridViewTextBoxColumn8->Width = 200;
 			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"Количество";
+			this->Column1->MinimumWidth = 10;
+			this->Column1->Name = L"Column1";
+			this->Column1->ReadOnly = true;
+			this->Column1->Width = 200;
+			// 
 			// treeView1
 			// 
 			this->treeView1->Location = System::Drawing::Point(15, 18);
@@ -521,9 +555,9 @@ namespace CLRStroyBat {
 			// dataGridView3
 			// 
 			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView3->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(7) {
+			this->dataGridView3->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(8) {
 				this->Column2,
-					this->Column3, this->Column4, this->Column6, this->Column7, this->Column16, this->Column5
+					this->Column3, this->Column4, this->Column6, this->Column7, this->Column16, this->Column5, this->Column8
 			});
 			this->dataGridView3->Location = System::Drawing::Point(251, 415);
 			this->dataGridView3->Name = L"dataGridView3";
@@ -533,62 +567,6 @@ namespace CLRStroyBat {
 			this->dataGridView3->Size = System::Drawing::Size(1189, 314);
 			this->dataGridView3->TabIndex = 4;
 			this->dataGridView3->CellMouseUp += gcnew System::Windows::Forms::DataGridViewCellMouseEventHandler(this, &ADDForm::dataGridView3_CellMouseUp);
-			// 
-			// Column2
-			// 
-			this->Column2->HeaderText = L"Наименование";
-			this->Column2->MinimumWidth = 10;
-			this->Column2->Name = L"Column2";
-			this->Column2->ReadOnly = true;
-			this->Column2->Width = 200;
-			// 
-			// Column3
-			// 
-			this->Column3->HeaderText = L"Артикул";
-			this->Column3->MinimumWidth = 10;
-			this->Column3->Name = L"Column3";
-			this->Column3->ReadOnly = true;
-			this->Column3->Width = 200;
-			// 
-			// Column4
-			// 
-			this->Column4->HeaderText = L"Цена руб.";
-			this->Column4->MinimumWidth = 10;
-			this->Column4->Name = L"Column4";
-			this->Column4->ReadOnly = true;
-			this->Column4->Width = 200;
-			// 
-			// Column6
-			// 
-			this->Column6->HeaderText = L"Ед.изм.";
-			this->Column6->MinimumWidth = 10;
-			this->Column6->Name = L"Column6";
-			this->Column6->ReadOnly = true;
-			this->Column6->Width = 200;
-			// 
-			// Column7
-			// 
-			this->Column7->HeaderText = L"Страна";
-			this->Column7->MinimumWidth = 10;
-			this->Column7->Name = L"Column7";
-			this->Column7->ReadOnly = true;
-			this->Column7->Width = 200;
-			// 
-			// Column16
-			// 
-			this->Column16->HeaderText = L"Цена $";
-			this->Column16->MinimumWidth = 10;
-			this->Column16->Name = L"Column16";
-			this->Column16->ReadOnly = true;
-			this->Column16->Width = 200;
-			// 
-			// Column5
-			// 
-			this->Column5->HeaderText = L"Бренд";
-			this->Column5->MinimumWidth = 10;
-			this->Column5->Name = L"Column5";
-			this->Column5->ReadOnly = true;
-			this->Column5->Width = 200;
 			// 
 			// button2
 			// 
@@ -760,6 +738,70 @@ namespace CLRStroyBat {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &ADDForm::button1_Click);
 			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"Наименование";
+			this->Column2->MinimumWidth = 10;
+			this->Column2->Name = L"Column2";
+			this->Column2->ReadOnly = true;
+			this->Column2->Width = 200;
+			// 
+			// Column3
+			// 
+			this->Column3->HeaderText = L"Артикул";
+			this->Column3->MinimumWidth = 10;
+			this->Column3->Name = L"Column3";
+			this->Column3->ReadOnly = true;
+			this->Column3->Width = 200;
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"Цена руб.";
+			this->Column4->MinimumWidth = 10;
+			this->Column4->Name = L"Column4";
+			this->Column4->ReadOnly = true;
+			this->Column4->Width = 200;
+			// 
+			// Column6
+			// 
+			this->Column6->HeaderText = L"Ед.изм.";
+			this->Column6->MinimumWidth = 10;
+			this->Column6->Name = L"Column6";
+			this->Column6->ReadOnly = true;
+			this->Column6->Width = 200;
+			// 
+			// Column7
+			// 
+			this->Column7->HeaderText = L"Страна";
+			this->Column7->MinimumWidth = 10;
+			this->Column7->Name = L"Column7";
+			this->Column7->ReadOnly = true;
+			this->Column7->Width = 200;
+			// 
+			// Column16
+			// 
+			this->Column16->HeaderText = L"Цена $";
+			this->Column16->MinimumWidth = 10;
+			this->Column16->Name = L"Column16";
+			this->Column16->ReadOnly = true;
+			this->Column16->Width = 200;
+			// 
+			// Column5
+			// 
+			this->Column5->HeaderText = L"Бренд";
+			this->Column5->MinimumWidth = 10;
+			this->Column5->Name = L"Column5";
+			this->Column5->ReadOnly = true;
+			this->Column5->Width = 200;
+			// 
+			// Column8
+			// 
+			this->Column8->HeaderText = L"Количество";
+			this->Column8->MinimumWidth = 10;
+			this->Column8->Name = L"Column8";
+			this->Column8->ReadOnly = true;
+			this->Column8->Width = 200;
+			// 
 			// ADDForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
@@ -835,18 +877,35 @@ namespace CLRStroyBat {
 	public:void SumAndDisplayCosts() {
 		double total = 0.0;
 
-		// Суммирование стоимости из первого DataGridView
-		for each (DataGridViewRow ^ row in dataGridView1->Rows) {
-			if (row->Cells["dataGridViewTextBoxColumn4"]->Value != nullptr) {
-				total += Convert::ToDouble(row->Cells["dataGridViewTextBoxColumn4"]->Value);
-			}
+		int columnIndexPrice = 2; // Индекс столбца 'цена'
+		int columnIndexQuantity = 7; // Индекс столбца 'количество'
+
+
+		// Проходим по всем строкам DataGridView
+		for each (DataGridViewRow ^ row in dataGridView1->Rows)
+		{
+			// Извлекаем значения из ячеек
+			double price = Convert::ToDouble(row->Cells[columnIndexPrice]->Value);
+			double quantity = Convert::ToDouble(row->Cells[columnIndexQuantity]->Value);
+
+			// Перемножаем и добавляем к общей сумме
+			total += price * quantity;
 		}
 
-		// Суммирование стоимости из второго DataGridView
-		for each (DataGridViewRow ^ row in dataGridView3->Rows) {
-			if (row->Cells["Column4"]->Value != nullptr) {
-				total += Convert::ToDouble(row->Cells["Column4"]->Value);
-			}
+
+		int columnIndexPrice2 = 2; // Индекс столбца 'цена'
+		int columnIndexQuantity2 = 7; // Индекс столбца 'количество'
+
+
+		// Проходим по всем строкам DataGridView
+		for each (DataGridViewRow ^ row in dataGridView3->Rows)
+		{
+			// Извлекаем значения из ячеек
+			double price = Convert::ToDouble(row->Cells[columnIndexPrice2]->Value);
+			double quantity = Convert::ToDouble(row->Cells[columnIndexQuantity2]->Value);
+
+			// Перемножаем и добавляем к общей сумме
+			total += price * quantity;
 		}
 
 		// Отображение общей стоимости в Label
@@ -915,6 +974,7 @@ namespace CLRStroyBat {
 						reader["Ед.изм."]->ToString(),
 						reader["Страна"]->ToString(),
 						reader["Цена $"]->ToString(),
+						reader["Количество"]->ToString(),
 				};
 				dataGridView1->Rows->Add(row);
 			}
@@ -957,6 +1017,7 @@ namespace CLRStroyBat {
 						reader["Страна"]->ToString(),
 						reader["Цена $"]->ToString(),
 						reader["Бренд"]->ToString(),
+						reader["Количество"]->ToString(),
 				};
 				dataGridView3->Rows->Add(row);
 			}
@@ -973,7 +1034,7 @@ namespace CLRStroyBat {
 		}
 	}
 
-	public: void GetDataWork(DataGridViewRow^ returnedRow)
+	public: void GetDataWork(DataGridViewRow^ returnedRow,String^ dataNum)
 	{
 		bool FoundRow = true;
 		array<String^>^ columnData = gcnew array<String^>(dataGridView1->Rows->Count - 1);
@@ -991,8 +1052,7 @@ namespace CLRStroyBat {
 		if (FoundRow)
 		{
 			dataGridView1->Rows->Add(returnedRow->Cells[0]->Value, returnedRow->Cells[1]->Value, returnedRow->Cells[2]->Value, returnedRow->Cells[3]->Value,
-				returnedRow->Cells[4]->Value, returnedRow->Cells[5]->Value, returnedRow->Cells[6]->Value);
-			MessageBox::Show("Позиция добавлена");
+				returnedRow->Cells[4]->Value, returnedRow->Cells[5]->Value, returnedRow->Cells[6]->Value, dataNum);
 		}
 		else
 		{
@@ -1000,7 +1060,7 @@ namespace CLRStroyBat {
 		}
 		SumAndDisplayCosts();
 	}
-	public: void GetDataMaterial(DataGridViewRow^ returnedRow)
+	public: void GetDataMaterial(DataGridViewRow^ returnedRow, String^ dataNum)
 	{
 		bool FoundRow = true;
 		array<String^>^ columnData = gcnew array<String^>(dataGridView3->Rows->Count - 1);
@@ -1017,8 +1077,7 @@ namespace CLRStroyBat {
 		if (FoundRow)
 		{
 			dataGridView3->Rows->Add(returnedRow->Cells[0]->Value, returnedRow->Cells[1]->Value, returnedRow->Cells[2]->Value, returnedRow->Cells[3]->Value,
-				returnedRow->Cells[4]->Value, returnedRow->Cells[5]->Value, returnedRow->Cells[6]->Value);
-			MessageBox::Show("Позиция добавлена");
+				returnedRow->Cells[4]->Value, returnedRow->Cells[5]->Value, returnedRow->Cells[6]->Value, dataNum);
 		}
 		else
 		{
@@ -1175,25 +1234,41 @@ namespace CLRStroyBat {
 
 		double sum = 0.0;
 
-		// Суммирование стоимости из первого DataGridView
-		for each (DataGridViewRow ^ row in dataGridView1->Rows) {
-			if (row->Cells["dataGridViewTextBoxColumn4"]->Value != nullptr) {
-				sum += Convert::ToDouble(row->Cells["dataGridViewTextBoxColumn4"]->Value);
-			}
+		int columnIndexPrice = 2; // Индекс столбца 'цена'
+		int columnIndexQuantity = 7; // Индекс столбца 'количество'
+
+
+		// Проходим по всем строкам DataGridView
+		for each (DataGridViewRow ^ row in dataGridView1->Rows)
+		{
+			// Извлекаем значения из ячеек
+			double price = Convert::ToDouble(row->Cells[columnIndexPrice]->Value);
+			double quantity = Convert::ToDouble(row->Cells[columnIndexQuantity]->Value);
+
+			// Перемножаем и добавляем к общей сумме
+			sum += price * quantity;
 		}
 
 		double sum1 = 0.0;
-		// Суммирование стоимости из второго DataGridView
-		for each (DataGridViewRow ^ row in dataGridView3->Rows) {
-			if (row->Cells["Column4"]->Value != nullptr) {
-				sum1 += Convert::ToDouble(row->Cells["Column4"]->Value);
-			}
+		int columnIndexPrice2 = 2; // Индекс столбца 'цена'
+		int columnIndexQuantity2 = 7; // Индекс столбца 'количество'
+
+
+		// Проходим по всем строкам DataGridView
+		for each (DataGridViewRow ^ row in dataGridView3->Rows)
+		{
+			// Извлекаем значения из ячеек
+			double price = Convert::ToDouble(row->Cells[columnIndexPrice2]->Value);
+			double quantity = Convert::ToDouble(row->Cells[columnIndexQuantity2]->Value);
+
+			// Перемножаем и добавляем к общей сумме
+			sum1 += price * quantity;
 		}
 
 		try
 		{
 			array<String^>^ product = {
-		"№", "Наименование", "Артикул", "Цена руб." ,"Тип","Ед.изм.","Страна","Цена $"
+		"№", "Наименование", "Артикул", "Цена руб." ,"Тип","Ед.изм.","Страна","Цена $,Количество"
 			};
 
 			try
@@ -1218,7 +1293,7 @@ namespace CLRStroyBat {
 					word3->ActiveDocument->Tables[1]->Cell(1, 6)->Range->Text = "Ед.изм.";
 					word3->ActiveDocument->Tables[1]->Cell(1, 7)->Range->Text = "Страна";
 					word3->ActiveDocument->Tables[1]->Cell(1, 8)->Range->Text = "Цена $";
-
+					word3->ActiveDocument->Tables[1]->Cell(1, 9)->Range->Text = "Количество";
 					int a = 1;
 					for (int i = 0; i < dataGridView1->RowCount - 1; i++)
 					{
@@ -1257,6 +1332,7 @@ namespace CLRStroyBat {
 					word3->ActiveDocument->Tables[2]->Cell(1, 6)->Range->Text = "Страна";
 					word3->ActiveDocument->Tables[2]->Cell(1, 7)->Range->Text = "Цена $";
 					word3->ActiveDocument->Tables[2]->Cell(1, 8)->Range->Text = "Бренд";
+					word3->ActiveDocument->Tables[2]->Cell(1, 9)->Range->Text = "Количество";
 
 					int b = 1;
 					for (int i = 0; i < dataGridView1->RowCount - 1; i++)

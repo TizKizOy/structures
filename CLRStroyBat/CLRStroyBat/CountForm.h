@@ -1,6 +1,5 @@
 #pragma once
 #include "Delegat.h"
-
 namespace CLRStroyBat {
 
 	using namespace System;
@@ -16,12 +15,17 @@ namespace CLRStroyBat {
 	public ref class CountForm : public System::Windows::Forms::Form
 	{
 	private:
-		returnMaterialData^ deleg;
+		DataGridViewRow^ sR;
+		returnNumber^ delog;
 	public:
-		CountForm(returnMaterialData^ sender) {
-			this->InitializeComponent();
-			deleg = sender;
-		};
+		CountForm(returnNumber^ sender, DataGridViewRow^ selectedRow)
+		{
+			InitializeComponent();
+			delog = sender;
+			sR = selectedRow;
+			data(sR);
+		}
+
 	public:
 		CountForm(void)
 		{
@@ -42,17 +46,14 @@ namespace CLRStroyBat {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::Label^ label2;
-
 	private: System::Windows::Forms::TextBox^ textBox1;
-	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Label^ label5;
-
-	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
 	protected:
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::Label^ label1;
 
 	private:
 		/// <summary>
@@ -67,100 +68,94 @@ namespace CLRStroyBat {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// label1
+			// textBox1
 			// 
-			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(125, 41);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(70, 25);
-			this->label1->TabIndex = 0;
-			this->label1->Text = L"label1";
-			this->label1->Click += gcnew System::EventHandler(this, &CountForm::label1_Click);
+			this->textBox1->Location = System::Drawing::Point(56, 160);
+			this->textBox1->Multiline = true;
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(134, 46);
+			this->textBox1->TabIndex = 13;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(69, 128);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(70, 25);
+			this->label3->TabIndex = 12;
+			this->label3->Text = L"Цена:";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(19, 164);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label2->Location = System::Drawing::Point(320, 124);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(70, 25);
-			this->label2->TabIndex = 1;
-			this->label2->Text = L"Цена:";
+			this->label2->Size = System::Drawing::Size(158, 29);
+			this->label2->TabIndex = 11;
+			this->label2->Text = L"Количество:";
 			// 
-			// textBox1
+			// numericUpDown1
 			// 
-			this->textBox1->Location = System::Drawing::Point(95, 158);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(100, 31);
-			this->textBox1->TabIndex = 3;
-			// 
-			// label4
-			// 
-			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(198, 164);
-			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(53, 25);
-			this->label4->TabIndex = 4;
-			this->label4->Text = L"руб.";
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(393, 129);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(80, 25);
-			this->label5->TabIndex = 5;
-			this->label5->Text = L"Кол-во";
-			// 
-			// button1
-			// 
-			this->button1->Location = System::Drawing::Point(248, 261);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(146, 61);
-			this->button1->TabIndex = 7;
-			this->button1->Text = L"Ок";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &CountForm::button1_Click);
+			this->numericUpDown1->Location = System::Drawing::Point(353, 175);
+			this->numericUpDown1->Name = L"numericUpDown1";
+			this->numericUpDown1->Size = System::Drawing::Size(120, 31);
+			this->numericUpDown1->TabIndex = 10;
+			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &CountForm::numericUpDown1_ValueChanged);
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(440, 261);
+			this->button2->Location = System::Drawing::Point(371, 301);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(111, 61);
-			this->button2->TabIndex = 8;
+			this->button2->Size = System::Drawing::Size(115, 53);
+			this->button2->TabIndex = 9;
 			this->button2->Text = L"Отмена";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &CountForm::button2_Click);
 			// 
-			// numericUpDown1
+			// button1
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(370, 162);
-			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(133, 31);
-			this->numericUpDown1->TabIndex = 9;
+			this->button1->Location = System::Drawing::Point(231, 301);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(125, 53);
+			this->button1->TabIndex = 8;
+			this->button1->Text = L"Ок";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &CountForm::button1_Click);
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.125F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->label1->Location = System::Drawing::Point(68, 35);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(86, 31);
+			this->label1->TabIndex = 7;
+			this->label1->Text = L"label1";
 			// 
 			// CountForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(608, 382);
+			this->ClientSize = System::Drawing::Size(603, 402);
+			this->Controls->Add(this->textBox1);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
 			this->Controls->Add(this->numericUpDown1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->Controls->Add(this->label5);
-			this->Controls->Add(this->label4);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Name = L"CountForm";
 			this->Text = L"CountForm";
@@ -171,15 +166,41 @@ namespace CLRStroyBat {
 
 		}
 #pragma endregion
-	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Close();
+	public: void data(DataGridViewRow^ sR)
+	{
+		label1->Text = sR->Cells[0]->Value->ToString();
+		textBox1->Text = sR->Cells[2]->Value->ToString();
+	}
+	public: void DataOF()
+	{
+		Decimal number = numericUpDown1->Value;
+		// Если вам нужно преобразовать его в другой тип, например, в int
+		String^ kolNum = Convert::ToString(numericUpDown1->Value);
+		delog(kolNum);
 	}
 	private: System::Void CountForm_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->Text = "Выбор количества";
+
 	}
-	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void numericUpDown1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+		NumericUpDown^ nud = gcnew NumericUpDown();
+		numericUpDown1->Minimum = 1;
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (numericUpDown1->Value > 0)
+		{
+			DataOF();
+			MessageBox::Show("Позиция добавлена");
+			this->Close();
+		}
+		else
+		{
+			MessageBox::Show("Выберите количество.");
+		}
+		
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
-};
+	};
 }

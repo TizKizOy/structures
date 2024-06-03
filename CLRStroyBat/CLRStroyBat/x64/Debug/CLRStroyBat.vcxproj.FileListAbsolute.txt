@@ -10,3 +10,4 @@ C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\x64\Debug\CLRStroyBat.A
 C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\x64\Debug\CLRStroyBat.AddMaterialForm.resources
 C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\x64\Debug\CLRStroyBat.AddWorkForm.resources
 C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\x64\Debug\CLRStroyBat.vcxproj.ResolveComReference.cache
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\x64\Debug\CLRStroyBat.CountForm.resources

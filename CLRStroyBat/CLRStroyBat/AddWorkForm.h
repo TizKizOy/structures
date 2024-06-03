@@ -1,6 +1,7 @@
 #pragma once
 #include "Database.h"
 #include "Delegat.h"
+#include "CountForm.h"
 
 namespace CLRStroyBat {
 
@@ -241,6 +242,13 @@ namespace CLRStroyBat {
 		Database^ db = gcnew Database();
 		//ADDForm^ f2 = gcnew ADDForm();
 
+	public: void GetDataNumericUpDown(String^ dataNum)
+	{
+		DataGridViewRow^ selectedRow = dataGridView2->SelectedRows[0];
+		deleg(selectedRow, dataNum);
+	}
+
+
 	private: System::Void AddWorkForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->Text = "Выбор работ, услуг";
 		AddWorkForm::Width = 998; //Установка пользовательского размера формы
@@ -343,11 +351,11 @@ namespace CLRStroyBat {
 	private: System::Void dataGridView2_MouseDoubleClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 		// Получаем выбранную строку из DataGridView2 
 		DataGridViewRow^ selectedRow = dataGridView2->SelectedRows[0];
-
 		// Проверка значения в ячейке "Цена руб."
 		if (selectedRow->Cells["Цена руб."]->Value != DBNull::Value) {
 			// Если значение не равно DBNull, вызываем делегат
-			deleg(selectedRow);
+			CountForm^ Cf = gcnew CountForm(gcnew returnNumber(this, &AddWorkForm::GetDataNumericUpDown), selectedRow);
+			Cf->ShowDialog();
 		}
 		else {
 			// Если значение равно DBNull, показываем сообщение
@@ -359,5 +367,5 @@ namespace CLRStroyBat {
 
 	}
 
-};
+	};
 }

@@ -235,8 +235,7 @@ namespace CLRStroyBat {
 			this->menuStrip1->Name = L"menuStrip1";
 			this->menuStrip1->Size = System::Drawing::Size(2079, 45);
 			this->menuStrip1->TabIndex = 1;
-			this->menuStrip1->Text = L"menuStrip1";
-			// 
+			this->menuStrip1->Text = L"menuStrip1";			// 
 			// главнаяToolStripMenuItem
 			// 
 			this->главнаяToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.125F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -439,9 +438,9 @@ namespace CLRStroyBat {
 
 		if (e->RowIndex >= 0)
 		{
-		String^ id = Convert::ToString(dataGridView1->Rows[e->RowIndex]->Cells["№"]->Value);
-		ADDForm^ f2 = gcnew ADDForm(gcnew returnTextBoxData(this, &SmetaForm::ChengeDataTextBox), id, data, dataNum);
-		f2->ShowDialog();
+			String^ id = Convert::ToString(dataGridView1->Rows[e->RowIndex]->Cells["№"]->Value);
+			ADDForm^ f2 = gcnew ADDForm(gcnew returnTextBoxData(this, &SmetaForm::ChengeDataTextBox), id, data, dataNum);
+			f2->ShowDialog();
 		}
 		else
 		{
@@ -450,7 +449,7 @@ namespace CLRStroyBat {
 
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-		
+
 		auto result = MessageBox::Show(
 			"Вы действительно хотите выполнить очистку таблиц?",
 			"Подтвердите удаление",
@@ -463,8 +462,9 @@ namespace CLRStroyBat {
 			db->closeConnection();
 			MessageBox::Show("Очистка выполнена.\nПерезапустите данное окно.");
 		}
-		
-		
+
+
 	}
-};
+
+	};
 }

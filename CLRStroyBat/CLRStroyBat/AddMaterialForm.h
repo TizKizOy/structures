@@ -1,6 +1,7 @@
 #pragma once
 #include "Delegat.h"
 #include "Database.h"
+#include "CountForm.h"
 
 namespace CLRStroyBat {
 
@@ -221,6 +222,12 @@ namespace CLRStroyBat {
 		DataTable^ dtR;
 		int count = 0;
 
+	public: void GetDataNumericUpDown(String^ dataNum)
+	{
+		DataGridViewRow^ selectedRow = dataGridView2->SelectedRows[0];
+		deleg(selectedRow, dataNum);
+	}
+
 	private: System::Void AddMaterialForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->Text = "Выбор материалов, товаров";
 		AddMaterialForm::Width = 975; //Установка пользовательского размера формы
@@ -298,14 +305,15 @@ namespace CLRStroyBat {
 					}
 		}
 	}
-	private: System::Void dataGridView2_MouseDoubleClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {		
+	private: System::Void dataGridView2_MouseDoubleClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
 		// Получаем выбранную строку из DataGridView2 
 		DataGridViewRow^ selectedRow = dataGridView2->SelectedRows[0];
 
 		// Проверка значения в ячейке "Цена руб."
 		if (selectedRow->Cells["Цена руб."]->Value != DBNull::Value) {
 			// Если значение не равно DBNull, вызываем делегат
-			deleg(selectedRow);
+			CountForm^ Cf = gcnew CountForm(gcnew returnNumber(this, &AddMaterialForm::GetDataNumericUpDown), selectedRow);
+			Cf->ShowDialog();
 		}
 		else {
 			// Если значение равно DBNull, показываем сообщение
@@ -314,7 +322,7 @@ namespace CLRStroyBat {
 			dataGridView2->ClearSelection();
 			// Пользователь может снова кликнуть на ячейку для выбора
 		};
-		
+
 	}
 
 	private: System::Void dataGridView2_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {

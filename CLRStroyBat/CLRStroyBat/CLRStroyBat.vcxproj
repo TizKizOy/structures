@@ -123,7 +123,6 @@
     <ClCompile Include="AddMaterialForm.cpp" />
     <ClCompile Include="AddWorkForm.cpp" />
     <ClCompile Include="CountForm.cpp" />
-    <ClCompile Include="CountForm1.cpp" />
     <ClCompile Include="Database.cpp" />
     <ClCompile Include="FormData.cpp" />
     <ClCompile Include="MaterialsForm.cpp" />
@@ -143,7 +142,7 @@
     <ClInclude Include="AddWorkForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="CountForm1.h">
+    <ClInclude Include="CountForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Database.h" />
@@ -178,8 +177,8 @@
     <EmbeddedResource Include="AddWorkForm.resx">
       <DependentUpon>AddWorkForm.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CountForm1.resx">
-      <DependentUpon>CountForm1.h</DependentUpon>
+    <EmbeddedResource Include="CountForm.resx">
+      <DependentUpon>CountForm.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MaterialsForm.resx">
       <DependentUpon>MaterialsForm.h</DependentUpon>

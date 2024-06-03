@@ -39,9 +39,6 @@
     <ClCompile Include="ADDForm.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CountForm.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
     <ClCompile Include="AddWorkForm.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
@@ -51,7 +48,7 @@
     <ClCompile Include="FormData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CountForm1.cpp">
+    <ClCompile Include="CountForm.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -92,7 +89,7 @@
     <ClInclude Include="FormData.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="CountForm1.h">
+    <ClInclude Include="CountForm.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>

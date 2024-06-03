@@ -53,7 +53,7 @@ namespace CLRStroyBat {
 
 			for each (DataGridViewRow ^ row in dgv->Rows) {
 				if (!row->IsNewRow) {
-					SqlCommand^ command = gcnew SqlCommand("SELECT COUNT(*) FROM SaveTableWork WHERE Наименование = @value1 AND Артикул = @value2 AND [Цена руб.] = @value3 AND Тип = @value4 AND [Ед.изм.] = @value5 AND Страна = @value6 AND [Цена $] = @value7 AND[idusdt] = @value8", Con);
+					SqlCommand^ command = gcnew SqlCommand("SELECT COUNT(*) FROM SaveTableWork WHERE Наименование = @value1 AND Артикул = @value2 AND [Цена руб.] = @value3 AND Тип = @value4 AND [Ед.изм.] = @value5 AND Страна = @value6 AND [Цена $] = @value7 AND [idusdt] = @value8 AND Количество = @value9", Con);
 					//command->Parameters->AddWithValue("@value1", name);
 					//command->Parameters->AddWithValue("@value2", age);
 
@@ -65,12 +65,13 @@ namespace CLRStroyBat {
 					command->Parameters->AddWithValue("@value6", row->Cells[5]->Value->ToString());
 					command->Parameters->AddWithValue("@value7", row->Cells[6]->Value->ToString());
 					command->Parameters->AddWithValue("@value8", tx->Text);
+					command->Parameters->AddWithValue("@value9", row->Cells[7]->Value->ToString());
 					int count = Convert::ToInt32(command->ExecuteScalar());
 
 					// Запись строки в таблицу, если она отсутствует
 					if (count == 0)
 					{ 
-						SqlCommand^ command = gcnew SqlCommand("INSERT INTO SaveTableWork (Наименование,Артикул,[Цена руб.],Тип,[Ед.изм.],Страна,[Цена $],[idusdt]) Values (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8)", Con);
+						SqlCommand^ command = gcnew SqlCommand("INSERT INTO SaveTableWork (Наименование,Артикул,[Цена руб.],Тип,[Ед.изм.],Страна,[Цена $],[idusdt],Количество) Values (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8,@value9)", Con);
 						// Добавление параметров
 						command->Parameters->AddWithValue("@value1", row->Cells[0]->Value->ToString());
 						command->Parameters->AddWithValue("@value2", row->Cells[1]->Value->ToString());
@@ -80,6 +81,7 @@ namespace CLRStroyBat {
 						command->Parameters->AddWithValue("@value6", row->Cells[5]->Value->ToString());
 						command->Parameters->AddWithValue("@value7", row->Cells[6]->Value->ToString());
 						command->Parameters->AddWithValue("@value8", tx->Text);
+						command->Parameters->AddWithValue("@value9", row->Cells[7]->Value->ToString());
 						// Выполнение команды
 						command->ExecuteNonQuery();
 					}
@@ -92,7 +94,7 @@ namespace CLRStroyBat {
 
 			for each (DataGridViewRow ^ row in dgv->Rows) {
 				if (!row->IsNewRow) {
-					SqlCommand^ command = gcnew SqlCommand("SELECT COUNT(*) FROM SaveTableMaterial WHERE Наименование = @value1 AND Артикул = @value2 AND [Цена руб.] = @value3 AND [Ед.изм.] = @value4 AND Страна = @value5 AND [Цена $] = @value6 AND Бренд = @value7 AND[idusd] = @value8", Con);
+					SqlCommand^ command = gcnew SqlCommand("SELECT COUNT(*) FROM SaveTableMaterial WHERE Наименование = @value1 AND Артикул = @value2 AND [Цена руб.] = @value3 AND [Ед.изм.] = @value4 AND Страна = @value5 AND [Цена $] = @value6 AND Бренд = @value7 AND [idusd] = @value8 AND Количество = @value9", Con);
 
 					command->Parameters->AddWithValue("@value1", row->Cells[0]->Value->ToString());
 					command->Parameters->AddWithValue("@value2", row->Cells[1]->Value->ToString());
@@ -102,12 +104,13 @@ namespace CLRStroyBat {
 					command->Parameters->AddWithValue("@value6", row->Cells[5]->Value->ToString());
 					command->Parameters->AddWithValue("@value7", row->Cells[6]->Value->ToString());
 					command->Parameters->AddWithValue("@value8", tx->Text);
+					command->Parameters->AddWithValue("@value9", row->Cells[7]->Value->ToString());
 					int count = Convert::ToInt32(command->ExecuteScalar());
 
 					// Запись строки в таблицу, если она отсутствует
 					if (count == 0)
 					{
-						SqlCommand^ command = gcnew SqlCommand("INSERT INTO SaveTableMaterial (Наименование,Артикул,[Цена руб.],[Ед.изм.],Страна,[Цена $], Бренд,[idusd]) Values (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8)", Con);
+						SqlCommand^ command = gcnew SqlCommand("INSERT INTO SaveTableMaterial (Наименование,Артикул,[Цена руб.],[Ед.изм.],Страна,[Цена $], Бренд,[idusd],Количество) Values (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8,@value9)", Con);
 						// Добавление параметров
 						command->Parameters->AddWithValue("@value1", row->Cells[0]->Value->ToString());
 						command->Parameters->AddWithValue("@value2", row->Cells[1]->Value->ToString());
@@ -117,6 +120,7 @@ namespace CLRStroyBat {
 						command->Parameters->AddWithValue("@value6", row->Cells[5]->Value->ToString());
 						command->Parameters->AddWithValue("@value7", row->Cells[6]->Value->ToString());
 						command->Parameters->AddWithValue("@value8", tx->Text);
+						command->Parameters->AddWithValue("@value9", row->Cells[7]->Value->ToString());
 						// Выполнение команды
 						command->ExecuteNonQuery();
 					}
@@ -172,7 +176,7 @@ namespace CLRStroyBat {
 			for each (DataGridViewRow ^ row in dgv->Rows) {
 				if (!row->IsNewRow) {
 					// Создание команды для вставки данных
-					SqlCommand^ command = gcnew SqlCommand("INSERT INTO SaveTableWork (Наименование,Артикул,[Цена руб.],Тип,[Ед.изм.],Страна,[Цена $],[idusdt]) Values (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8)", Con);
+					SqlCommand^ command = gcnew SqlCommand("INSERT INTO SaveTableWork (Наименование,Артикул,[Цена руб.],Тип,[Ед.изм.],Страна,[Цена $],[idusdt],Количество) Values (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8,@value9)", Con);
 
 					// Добавление параметров
 					command->Parameters->AddWithValue("@value1", row->Cells[0]->Value->ToString());
@@ -183,6 +187,7 @@ namespace CLRStroyBat {
 					command->Parameters->AddWithValue("@value6", row->Cells[5]->Value->ToString());
 					command->Parameters->AddWithValue("@value7", row->Cells[6]->Value->ToString());
 					command->Parameters->AddWithValue("@value8", tx->Text);
+					command->Parameters->AddWithValue("@value9", row->Cells[7]->Value->ToString());
 					// Выполнение команды
 					command->ExecuteNonQuery();
 
@@ -196,7 +201,7 @@ namespace CLRStroyBat {
 			for each (DataGridViewRow ^ row in dgv->Rows) {
 				if (!row->IsNewRow) {
 					// Создание команды для вставки данных
-					SqlCommand^ command = gcnew SqlCommand("INSERT INTO SaveTableMaterial (Наименование,Артикул,[Цена руб.],[Ед.изм.],Страна,[Цена $], Бренд,[idusd]) Values (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8)", Con);
+					SqlCommand^ command = gcnew SqlCommand("INSERT INTO SaveTableMaterial (Наименование,Артикул,[Цена руб.],[Ед.изм.],Страна,[Цена $], Бренд,[idusd], Количество) Values (@value1,@value2,@value3,@value4,@value5,@value6,@value7,@value8,@value9)", Con);
 
 					// Добавление параметров
 					command->Parameters->AddWithValue("@value1", row->Cells[0]->Value->ToString());
@@ -206,7 +211,8 @@ namespace CLRStroyBat {
 					command->Parameters->AddWithValue("@value5", row->Cells[4]->Value->ToString());
 					command->Parameters->AddWithValue("@value6", row->Cells[5]->Value->ToString());
 					command->Parameters->AddWithValue("@value7", row->Cells[6]->Value->ToString());
-					command->Parameters->AddWithValue("@value8", tx->Text);;
+					command->Parameters->AddWithValue("@value8", tx->Text);
+					command->Parameters->AddWithValue("@value9", row->Cells[7]->Value->ToString());
 					// Выполнение команды
 					command->ExecuteNonQuery();
 
