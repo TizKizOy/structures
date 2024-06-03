@@ -1,6 +1,5 @@
 #pragma once
 #include "Database.h"
-#include "CountForm.h"
 
 namespace CLRStroyBat {
 

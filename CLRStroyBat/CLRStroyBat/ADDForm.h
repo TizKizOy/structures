@@ -18,12 +18,26 @@ namespace CLRStroyBat {
 	/// </summary>
 	public ref class ADDForm : public System::Windows::Forms::Form
 	{
-	private:
-		array<String^>^ arrayId;
-		array<String^>^ dataNumId;
+
+	public:
+		ADDForm(returnTextBoxData^ sender, String^ id, array<String^>^ data, array<String^>^ dataNum)
+		{
+			deleg = sender;
+			dataId = id;
+			arrayId = data;
+			dataNumId = dataNum;
+			// Здесь должен быть код для загрузки данных из базы данных и заполнения формы !!!!!!!!!
+			InitializeComponent();
+			DataFromDatabaseTextBoxs();
+			DataFromDatabaseWorks();
+			DataFromDatabaseMaterials();
+			textBox9->ReadOnly = true;
+		}
+
 	private: System::Windows::Forms::ContextMenuStrip^ contextMenuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ удалитьСтрокуToolStripMenuItem;
 	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::Button^ button1;
 		   String^ dataId;
 	public:
 		ADDForm(String^ id, array<String^>^ data, array<String^>^ dataNum) {
@@ -51,10 +65,6 @@ namespace CLRStroyBat {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column16;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
-
-	private:
-		returnTextBoxData^ deleg;
-		array<String^>^ arrayStr;
 	public:
 		ADDForm(returnTextBoxData^ sender, array<String^>^ data, array<String^>^ dataNum)
 		{
@@ -63,6 +73,12 @@ namespace CLRStroyBat {
 			arrayStr = data;
 			dataNumId = dataNum;
 		};
+
+	private:array<String^>^ arrayId;
+	private:array<String^>^ dataNumId;
+	private:returnTextBoxData^ deleg;
+	private:changeTextBoxData^ changedelog;
+	private:array<String^>^ arrayStr;
 	public:
 		ADDForm(void)
 		{
@@ -209,6 +225,7 @@ namespace CLRStroyBat {
 			this->contextMenuStrip1 = (gcnew System::Windows::Forms::ContextMenuStrip(this->components));
 			this->удалитьСтрокуToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
@@ -587,7 +604,7 @@ namespace CLRStroyBat {
 			// 
 			this->label9->AutoSize = true;
 			this->label9->ForeColor = System::Drawing::SystemColors::Highlight;
-			this->label9->Location = System::Drawing::Point(1326, 874);
+			this->label9->Location = System::Drawing::Point(1193, 876);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(24, 25);
 			this->label9->TabIndex = 27;
@@ -597,7 +614,7 @@ namespace CLRStroyBat {
 			// 
 			this->label10->AutoSize = true;
 			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8));
-			this->label10->Location = System::Drawing::Point(1338, 873);
+			this->label10->Location = System::Drawing::Point(1205, 875);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(0, 26);
 			this->label10->TabIndex = 26;
@@ -606,7 +623,7 @@ namespace CLRStroyBat {
 			// 
 			this->label11->AutoSize = true;
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8));
-			this->label11->Location = System::Drawing::Point(1195, 872);
+			this->label11->Location = System::Drawing::Point(1062, 874);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(76, 26);
 			this->label11->TabIndex = 25;
@@ -614,7 +631,7 @@ namespace CLRStroyBat {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(1627, 859);
+			this->button4->Location = System::Drawing::Point(1502, 862);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(157, 53);
 			this->button4->TabIndex = 28;
@@ -624,7 +641,7 @@ namespace CLRStroyBat {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(1814, 860);
+			this->button5->Location = System::Drawing::Point(1820, 862);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(131, 53);
 			this->button5->TabIndex = 29;
@@ -636,7 +653,7 @@ namespace CLRStroyBat {
 			// 
 			this->label12->AutoSize = true;
 			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8));
-			this->label12->Location = System::Drawing::Point(1406, 872);
+			this->label12->Location = System::Drawing::Point(1273, 874);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(54, 26);
 			this->label12->TabIndex = 30;
@@ -733,11 +750,22 @@ namespace CLRStroyBat {
 			this->button7->UseVisualStyleBackColor = true;
 			this->button7->Click += gcnew System::EventHandler(this, &ADDForm::button7_Click);
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(1674, 862);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(131, 53);
+			this->button1->TabIndex = 36;
+			this->button1->Text = L"Изменить";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &ADDForm::button1_Click);
+			// 
 			// ADDForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(2036, 944);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->button7);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->monthCalendar1);
@@ -945,35 +973,57 @@ namespace CLRStroyBat {
 		}
 	}
 
-
-	public: void PriserWork()
-	{
-		/*	for (int i = 0; i < dataGridView1->Rows->Count - 6; i++)
-			{
-				countW++;
-			}
-			countW += countM;
-			label9->Text = countW.ToString();*/
-	}
-	public: void PriseMaterial()
-	{
-		//for (int i = 0; i < dataGridView1->Rows->Count - 6; i++)
-		//{
-		//	countM++;
-		//}
-		//countW += countM;
-		//label9->Text = countW.ToString();
-	}
 	public: void GetDataWork(DataGridViewRow^ returnedRow)
 	{
-		dataGridView1->Rows->Add(returnedRow->Cells[0]->Value, returnedRow->Cells[1]->Value, returnedRow->Cells[2]->Value, returnedRow->Cells[3]->Value,
-			returnedRow->Cells[4]->Value, returnedRow->Cells[5]->Value, returnedRow->Cells[6]->Value);
+		bool FoundRow = true;
+		array<String^>^ columnData = gcnew array<String^>(dataGridView1->Rows->Count - 1);
+		String^ str = returnedRow->Cells[1]->Value->ToString();
+		// Извлекаем данные из столбца
+		for (int i = 0; i < dataGridView1->Rows->Count; ++i) {
+			if (dataGridView1->Rows[i]->IsNewRow) continue; // Пропускаем строку для нового ввода
+			columnData[i] = dataGridView1->Rows[i]->Cells[1]->Value->ToString();
+			if (columnData[i]->Trim() == str->Trim())
+			{
+				FoundRow = false;
+			}
+		}
+
+		if (FoundRow)
+		{
+			dataGridView1->Rows->Add(returnedRow->Cells[0]->Value, returnedRow->Cells[1]->Value, returnedRow->Cells[2]->Value, returnedRow->Cells[3]->Value,
+				returnedRow->Cells[4]->Value, returnedRow->Cells[5]->Value, returnedRow->Cells[6]->Value);
+			MessageBox::Show("Позиция добавлена");
+		}
+		else
+		{
+			MessageBox::Show("Эта позиция уже добавлена");
+		}
 		SumAndDisplayCosts();
 	}
 	public: void GetDataMaterial(DataGridViewRow^ returnedRow)
 	{
-		dataGridView3->Rows->Add(returnedRow->Cells[0]->Value, returnedRow->Cells[1]->Value, returnedRow->Cells[2]->Value, returnedRow->Cells[3]->Value,
-			returnedRow->Cells[4]->Value, returnedRow->Cells[5]->Value, returnedRow->Cells[6]->Value);
+		bool FoundRow = true;
+		array<String^>^ columnData = gcnew array<String^>(dataGridView3->Rows->Count - 1);
+		String^ str = returnedRow->Cells[1]->Value->ToString();
+		// Извлекаем данные из столбца
+		for (int i = 0; i < dataGridView3->Rows->Count; ++i) {
+			if (dataGridView3->Rows[i]->IsNewRow) continue; // Пропускаем строку для нового ввода
+			columnData[i] = dataGridView3->Rows[i]->Cells[1]->Value->ToString();
+			if (columnData[i]->Trim() == str->Trim())
+			{
+				FoundRow = false;
+			}
+		}
+		if (FoundRow)
+		{
+			dataGridView3->Rows->Add(returnedRow->Cells[0]->Value, returnedRow->Cells[1]->Value, returnedRow->Cells[2]->Value, returnedRow->Cells[3]->Value,
+				returnedRow->Cells[4]->Value, returnedRow->Cells[5]->Value, returnedRow->Cells[6]->Value);
+			MessageBox::Show("Позиция добавлена");
+		}
+		else
+		{
+			MessageBox::Show("Эта позиция уже добавлена");
+		}
 		SumAndDisplayCosts();
 	}
 
@@ -1006,65 +1056,64 @@ namespace CLRStroyBat {
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 		AddWorkForm^ f2 = gcnew AddWorkForm(gcnew returnMaterialData(this, &ADDForm::GetDataWork));
 		f2->ShowDialog();
-
 	}
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		AddMaterialForm^ f = gcnew AddMaterialForm(gcnew returnMaterialData(this, &ADDForm::GetDataMaterial));
 		f->ShowDialog();
-
-		/*this->Hide();*/
 	}
-
-
-
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-		String^ textBoxValue = textBox9->Text;
-		bool matchFound = true;
-
-		for (int i = 0; i < dataNumId->Length; i++) {
-			if (dataNumId[i]->Trim() == textBoxValue->Trim()) {
-				matchFound = false;
-				break;
-			}
-		}
-
-
-		if (matchFound)
+		if (!String::IsNullOrWhiteSpace(textBox9->Text))
 		{
-			try {
-				db->openConnection();
-				db->InsertIntoSaveWork(dataGridView1, textBox9);
-				db->InsertIntoSaveMaterials(dataGridView3, textBox9);
+			String^ textBoxValue = textBox9->Text;
+			bool matchFound = true;
 
-				String^ data1 = textBox9->Text;//Номер сметы
-				String^ data2 = textBox10->Text;//Дата
-				String^ data3 = textBox1->Text;//наименование
-				String^ data4 = textBox2->Text;//тел
-				String^ data5 = textBox3->Text;//начало работ
-				String^ data6 = textBox4->Text;//окончание план
-				String^ data7 = textBox5->Text;//окончание работ
-				String^ data8 = textBox6->Text;//Доп инфа
-				String^ data9 = textBox7->Text;//Комм
-				String^ data10 = textBox8->Text;//Рекомендации
-				double total1 = Convert::ToDouble(label9->Text);
-				db->InsertIntoSaveTextBox(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, textBox9);
-
-				deleg(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, total1);
-
-				db->closeConnection();
-				MessageBox::Show("Успех");
-				this->Hide();
+			for (int i = 0; i < dataNumId->Length; i++) {
+				if (dataNumId[i]->Trim() == textBoxValue->Trim()) {
+					matchFound = false;
+					break;
+				}
 			}
-			catch (Exception^ ex) {
-				MessageBox::Show(ex->Message);
+
+			if (matchFound)
+			{
+				try {
+					db->openConnection();
+					db->InsertIntoSaveWork(dataGridView1, textBox9);
+					db->InsertIntoSaveMaterials(dataGridView3, textBox9);
+
+					String^ data1 = textBox9->Text;//Номер сметы
+					String^ data2 = textBox10->Text;//Дата
+					String^ data3 = textBox1->Text;//наименование
+					String^ data4 = textBox2->Text;//тел
+					String^ data5 = textBox3->Text;//начало работ
+					String^ data6 = textBox4->Text;//окончание план
+					String^ data7 = textBox5->Text;//окончание работ
+					String^ data8 = textBox6->Text;//Доп инфа
+					String^ data9 = textBox7->Text;//Комм
+					String^ data10 = textBox8->Text;//Рекомендации
+					double total1 = Convert::ToDouble(label9->Text);
+					db->InsertIntoSaveTextBox(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, textBox9);
+
+					deleg(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, total1);
+
+					db->closeConnection();
+					MessageBox::Show("Успешно добавлен");
+					this->Hide();
+				}
+				catch (Exception^ ex) {
+					MessageBox::Show(ex->Message);
+				}
+			}
+			else
+			{
+				MessageBox::Show("Вы уже добавили смету с таким номером.\n Если хотите добавить изменения выберите кпоку изменить.");
 			}
 		}
 		else
 		{
-			MessageBox::Show("Вы уже оформляли смету с таким номером.\n Если хотите добавить имзенения выберите кпоку изменить, а не добавить");
+			MessageBox::Show("Введите номер сметы чтобы оформить её.");
 		}
-
 	}
 
 	public: System::Void textBox9_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
@@ -1119,11 +1168,11 @@ namespace CLRStroyBat {
 		}
 	}
 	private: System::Void удалитьСтрокуToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		//////////////// надо как-то сделать
 	}
 
 	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-		
+
 		double sum = 0.0;
 
 		// Суммирование стоимости из первого DataGridView
@@ -1140,7 +1189,7 @@ namespace CLRStroyBat {
 				sum1 += Convert::ToDouble(row->Cells["Column4"]->Value);
 			}
 		}
-		
+
 		try
 		{
 			array<String^>^ product = {
@@ -1157,20 +1206,20 @@ namespace CLRStroyBat {
 				word3->Selection->TypeText("\nТаблица №1. Расчёт работ:");
 				Object^ t1 = Microsoft::Office::Interop::Word::WdDefaultTableBehavior::wdWord9TableBehavior;//в параметрах документа ворд указываем настройку отображать границы ячеек таблицы
 				Object^ t2 = Microsoft::Office::Interop::Word::WdAutoFitBehavior::wdAutoFitContent; // в параметрах документа Ворд указываем настройки автоматически изменять размер ячеек таблицы под
-				word3->ActiveDocument->Tables->Add(word3->Selection->Range, dataGridView1->RowCount+1, dataGridView1->ColumnCount+1, t1, t2);//записываемое в них содеримое и визуальным показом всех границ ячеек таблицы
+				word3->ActiveDocument->Tables->Add(word3->Selection->Range, dataGridView1->RowCount + 1, dataGridView1->ColumnCount + 1, t1, t2);//записываемое в них содеримое и визуальным показом всех границ ячеек таблицы
 
 				try
 				{
-				word3->ActiveDocument->Tables[1]->Cell(1, 1)->Range->Text = "N";
-				word3->ActiveDocument->Tables[1]->Cell(1, 2)->Range->Text = "Наименование";
-				word3->ActiveDocument->Tables[1]->Cell(1, 3)->Range->Text = "Артикул";
-				word3->ActiveDocument->Tables[1]->Cell(1, 4)->Range->Text = "Цена руб.";
-				word3->ActiveDocument->Tables[1]->Cell(1, 5)->Range->Text = "Тип";
-				word3->ActiveDocument->Tables[1]->Cell(1, 6)->Range->Text = "Ед.изм.";
-				word3->ActiveDocument->Tables[1]->Cell(1, 7)->Range->Text = "Страна";
-				word3->ActiveDocument->Tables[1]->Cell(1, 8)->Range->Text = "Цена $";
+					word3->ActiveDocument->Tables[1]->Cell(1, 1)->Range->Text = "N";
+					word3->ActiveDocument->Tables[1]->Cell(1, 2)->Range->Text = "Наименование";
+					word3->ActiveDocument->Tables[1]->Cell(1, 3)->Range->Text = "Артикул";
+					word3->ActiveDocument->Tables[1]->Cell(1, 4)->Range->Text = "Цена руб.";
+					word3->ActiveDocument->Tables[1]->Cell(1, 5)->Range->Text = "Тип";
+					word3->ActiveDocument->Tables[1]->Cell(1, 6)->Range->Text = "Ед.изм.";
+					word3->ActiveDocument->Tables[1]->Cell(1, 7)->Range->Text = "Страна";
+					word3->ActiveDocument->Tables[1]->Cell(1, 8)->Range->Text = "Цена $";
 
-				int a = 1;
+					int a = 1;
 					for (int i = 0; i < dataGridView1->RowCount - 1; i++)
 					{
 						word3->ActiveDocument->Tables[1]->Cell(i + 2, 1)->Range->Text = a++.ToString();
@@ -1183,9 +1232,9 @@ namespace CLRStroyBat {
 					int lastRow = word3->ActiveDocument->Tables[1]->Rows->Count;
 					int lastColumn = word3->ActiveDocument->Tables[1]->Columns->Count;
 					word3->ActiveDocument->Tables[1]->Cell(lastRow, 3)->Range->Text = "ИТОГО:";
-					word3->ActiveDocument->Tables[1]->Cell(lastRow, 3+1)->Range->Text = sum.ToString();
+					word3->ActiveDocument->Tables[1]->Cell(lastRow, 3 + 1)->Range->Text = sum.ToString();
 
-					
+
 				}
 				catch (System::Runtime::InteropServices::COMException^ eva)
 				{
@@ -1228,8 +1277,10 @@ namespace CLRStroyBat {
 				{
 					MessageBox::Show(eva->Message);
 				}
-
-
+				int overSum = sum + sum1;
+				Int32^ str100 = 100; // динамическая целочисленная переменная декларируется и инициализируется 10 - ю, чтобы указывать на 10 - ю строку таблицы
+				word3->Selection->MoveDown(t3, str100, t);///переводим текущую позицию курсоря Selection за пределы табл в 10-ю строку, куда введем текст
+				word3->Selection->TypeText("\t\t\t\t\tВСЕГО: " + overSum.ToString() + " руб.");
 				Object^ filename = "C:\\Users\\Захар\\source\\repos\\Laba27\\Шабуневич Захар Т-319.docx";///текучему у дркументу (написал полный путь файлу и указал имя расширение
 				word3->ActiveDocument->SaveAs(filename, t, t, t, t, t, t, t, t, t, t, t, t, t, t, t);//Если пользователь сохранит то он сохранит архивированных файла по нашему пути
 
@@ -1242,6 +1293,54 @@ namespace CLRStroyBat {
 		catch (Exception^ eva)
 		{
 			MessageBox::Show(eva->Message);
+		}
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		String^ textBoxValue1 = textBox9->Text;
+		bool matchFound1 = true;
+
+		for (int i = 0; i < dataNumId->Length; i++) {
+			if (dataNumId[i]->Trim() == textBoxValue1->Trim()) {
+				matchFound1 = false;
+				break;
+			}
+		}
+
+		if (!matchFound1)
+		{
+			try
+			{
+				db->openConnection();
+				db->RepeatChecFromSaveTableWork(dataGridView1, textBox9);
+				db->RepeatChecFromSaveTableMaterial(dataGridView3, textBox9);
+
+				String^ data1 = textBox9->Text;//Номер сметы
+				String^ data2 = textBox10->Text;//Дата
+				String^ data3 = textBox1->Text;//наименование
+				String^ data4 = textBox2->Text;//тел
+				String^ data5 = textBox3->Text;//начало работ
+				String^ data6 = textBox4->Text;//окончание план
+				String^ data7 = textBox5->Text;//окончание работ
+				String^ data8 = textBox6->Text;//Доп инфа
+				String^ data9 = textBox7->Text;//Комм
+				String^ data10 = textBox8->Text;//Рекомендации
+				double total1 = Convert::ToDouble(label9->Text);
+
+				db->ChangeSaveTextBox(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, textBox9);
+				deleg(data1, data2, data3, data4, data5, data6, data7, data8, data9, data10, total1);
+				db->closeConnection();
+				MessageBox::Show("Успешно изменён");
+				this->Hide();
+			}
+			catch (Exception^ eva)
+			{
+				MessageBox::Show(eva->Message);
+			}
+		}
+		else
+		{
+			MessageBox::Show("Вы не оформляли смету с таким номер.\n Чтобы внести изменения нужно сначала оформить смету.");
 		}
 	}
 	};

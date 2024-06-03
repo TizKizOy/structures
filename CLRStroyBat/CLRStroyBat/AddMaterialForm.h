@@ -1,7 +1,6 @@
 #pragma once
 #include "Delegat.h"
 #include "Database.h"
-#include "CountForm.h"
 
 namespace CLRStroyBat {
 
@@ -299,9 +298,7 @@ namespace CLRStroyBat {
 					}
 		}
 	}
-	private: System::Void dataGridView2_MouseDoubleClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {
-		// Получаем выбранную строку из DataGridView2 в AddMaterialForm
-		CountForm^ f2 = gcnew CountForm();
+	private: System::Void dataGridView2_MouseDoubleClick(System::Object^ sender, System::Windows::Forms::MouseEventArgs^ e) {		
 		// Получаем выбранную строку из DataGridView2 
 		DataGridViewRow^ selectedRow = dataGridView2->SelectedRows[0];
 
@@ -309,7 +306,6 @@ namespace CLRStroyBat {
 		if (selectedRow->Cells["Цена руб."]->Value != DBNull::Value) {
 			// Если значение не равно DBNull, вызываем делегат
 			deleg(selectedRow);
-			f2->ShowDialog();
 		}
 		else {
 			// Если значение равно DBNull, показываем сообщение
@@ -318,6 +314,7 @@ namespace CLRStroyBat {
 			dataGridView2->ClearSelection();
 			// Пользователь может снова кликнуть на ячейку для выбора
 		};
+		
 	}
 
 	private: System::Void dataGridView2_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {

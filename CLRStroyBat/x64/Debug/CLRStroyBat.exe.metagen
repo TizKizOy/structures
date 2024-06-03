@@ -1,7 +1,6 @@
   CLRStroyBat.ADDForm.resources - Embedded, ContainedInManifestFile, 
   CLRStroyBat.AddMaterialForm.resources - Embedded, ContainedInManifestFile, 
   CLRStroyBat.AddWorkForm.resources - Embedded, ContainedInManifestFile, 
-  CLRStroyBat.CountForm.resources - Embedded, ContainedInManifestFile, 
   CLRStroyBat.MaterialsForm.resources - Embedded, ContainedInManifestFile, 
   CLRStroyBat.MenuForm.resources - Embedded, ContainedInManifestFile, 
   CLRStroyBat.PlitkaForm.resources - Embedded, ContainedInManifestFile, 
@@ -33,13 +32,13 @@ Class CLRStroyBat.Database: AutoLayout, AnsiClass, Class, Public, BeforeFieldIni
     System.Data.SqlClient.SqlConnection Con : Public
   Methods:
     clearEverythingTable(): PrivateScope, Public, HideBySig
-    ChangeSaveTableMaterial(DataGridView, TextBox): PrivateScope, Public, HideBySig
-    ChangeSaveTableWork(DataGridView, TextBox): PrivateScope, Public, HideBySig
+    ChangeSaveSmetaTextBoxs(String, String, String, String, Double, String, String, String): PrivateScope, Public, HideBySig
+    RepeatChecFromSaveTableWork(DataGridView, TextBox): PrivateScope, Public, HideBySig
+    RepeatChecFromSaveTableMaterial(DataGridView, TextBox): PrivateScope, Public, HideBySig
     ChangeSaveTextBox(String, String, String, String, String, String, String, String, String, String, TextBox): PrivateScope, Public, HideBySig
     InsertIntoSaveTextBox(String, String, String, String, String, String, String, String, String, String, TextBox): PrivateScope, Public, HideBySig
     InsertIntoSaveWork(DataGridView, TextBox): PrivateScope, Public, HideBySig
     InsertIntoSaveMaterials(DataGridView, TextBox): PrivateScope, Public, HideBySig
-    InsertIntoSaveSmetaDataGrid(DataGridView): PrivateScope, Public, HideBySig
     InsertIntoSaveSmetaTextBoxs(String, String, String, String, Double, String, String, String): PrivateScope, Public, HideBySig
     getTableSmeta(DataGridView): PrivateScope, Public, HideBySig
     getTableWork(): PrivateScope, Public, HideBySig
@@ -63,10 +62,13 @@ Class CLRStroyBat.returnTextBoxData: AutoLayout, AnsiClass, Class, Public, Seale
     Invoke(String, String, String, String, String, String, String, String, String, String, Double): PrivateScope, Public, Final, Virtual, VtableLayoutMask
     BeginInvoke(String, String, String, String, String, String, String, String, String, String, Double, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
     EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
-Class CLRStroyBat.CountForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
-  :System.Windows.Forms.Form
-    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
-    Void .ctor(CLRStroyBat.returnMaterialData): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+Class CLRStroyBat.changeTextBoxData: AutoLayout, AnsiClass, Class, Public, Sealed, BeforeFieldInit
+  :System.MulticastDelegate
+    Void .ctor(System.Object, IntPtr): PrivateScope, Public, SpecialName, RTSpecialName
+  Methods:
+    Invoke(String, String, String, String, String, String, String, String, String, String, Double): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    BeginInvoke(String, String, String, String, String, String, String, String, String, String, Double, AsyncCallback, Object): PrivateScope, Public, Final, Virtual, VtableLayoutMask
+    EndInvoke(IAsyncResult): PrivateScope, Public, Final, Virtual, VtableLayoutMask
 Class CLRStroyBat.AddWorkForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -80,16 +82,19 @@ Class CLRStroyBat.ADDForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(CLRStroyBat.returnTextBoxData, System.String[], System.String[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
     Void .ctor(System.String, System.String[], System.String[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(CLRStroyBat.returnTextBoxData, System.String, System.String[], System.String[]): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
   Methods:
     SumAndDisplayCosts(): PrivateScope, Public, HideBySig
     DataFromDatabaseTextBoxs(): PrivateScope, Public, HideBySig
     DataFromDatabaseWorks(): PrivateScope, Public, HideBySig
     DataFromDatabaseMaterials(): PrivateScope, Public, HideBySig
-    PriserWork(): PrivateScope, Public, HideBySig
-    PriseMaterial(): PrivateScope, Public, HideBySig
     GetDataWork(DataGridViewRow): PrivateScope, Public, HideBySig
     GetDataMaterial(DataGridViewRow): PrivateScope, Public, HideBySig
     textBox9_KeyPress(Object, KeyPressEventArgs): PrivateScope, Public, HideBySig
+Class CLRStroyBat.CountForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
+  :System.Windows.Forms.Form
+    Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
+    Void .ctor(CLRStroyBat.returnMaterialData): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
 Class CLRStroyBat.MaterialsForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form
     Void .ctor(): PrivateScope, Public, HideBySig, SpecialName, RTSpecialName
@@ -99,6 +104,7 @@ Class CLRStroyBat.SmetaForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldIn
   Methods:
     SumAndDisplayCosts(): PrivateScope, Public, HideBySig
     CountTable(): PrivateScope, Public, HideBySig
+    ChengeDataTextBox(String, String, String, String, String, String, String, String, String, String, Double): PrivateScope, Public, HideBySig
     GetDataTextBox(String, String, String, String, String, String, String, String, String, String, Double): PrivateScope, Public, HideBySig
 Class CLRStroyBat.WorkForm: AutoLayout, AnsiClass, Class, Public, BeforeFieldInit
   :System.Windows.Forms.Form

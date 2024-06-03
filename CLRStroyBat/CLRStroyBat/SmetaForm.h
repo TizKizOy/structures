@@ -39,9 +39,9 @@ namespace CLRStroyBat {
 		}
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	protected:
-	private: System::Windows::Forms::Button^ button7;
+
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::Button^ button2;
+
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Label^ label1;
@@ -52,6 +52,7 @@ namespace CLRStroyBat {
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::MenuStrip^ menuStrip1;
 	private: System::Windows::Forms::ToolStripMenuItem^ главнаяToolStripMenuItem;
+	private: System::Windows::Forms::Button^ button2;
 
 	protected:
 
@@ -107,9 +108,7 @@ namespace CLRStroyBat {
 		void InitializeComponent(void)
 		{
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -120,6 +119,7 @@ namespace CLRStroyBat {
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->menuStrip1 = (gcnew System::Windows::Forms::MenuStrip());
 			this->главнаяToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->button2 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -132,19 +132,10 @@ namespace CLRStroyBat {
 			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersWidth = 82;
 			this->dataGridView1->RowTemplate->Height = 33;
+			this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->dataGridView1->Size = System::Drawing::Size(1711, 691);
 			this->dataGridView1->TabIndex = 0;
 			this->dataGridView1->CellMouseDoubleClick += gcnew System::Windows::Forms::DataGridViewCellMouseEventHandler(this, &SmetaForm::dataGridView1_CellMouseDoubleClick);
-			// 
-			// button7
-			// 
-			this->button7->Location = System::Drawing::Point(1790, 641);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(147, 53);
-			this->button7->TabIndex = 16;
-			this->button7->Text = L".docx";
-			this->button7->UseVisualStyleBackColor = true;
-			this->button7->Click += gcnew System::EventHandler(this, &SmetaForm::button7_Click);
 			// 
 			// button1
 			// 
@@ -156,19 +147,9 @@ namespace CLRStroyBat {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &SmetaForm::button1_Click);
 			// 
-			// button2
-			// 
-			this->button2->Location = System::Drawing::Point(1790, 154);
-			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(147, 60);
-			this->button2->TabIndex = 3;
-			this->button2->Text = L"Изменить";
-			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &SmetaForm::button2_Click);
-			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(1790, 230);
+			this->button3->Location = System::Drawing::Point(1790, 153);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(147, 60);
 			this->button3->TabIndex = 4;
@@ -252,7 +233,7 @@ namespace CLRStroyBat {
 			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(1) { this->главнаяToolStripMenuItem });
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
-			this->menuStrip1->Size = System::Drawing::Size(2079, 49);
+			this->menuStrip1->Size = System::Drawing::Size(2079, 45);
 			this->menuStrip1->TabIndex = 1;
 			this->menuStrip1->Text = L"menuStrip1";
 			// 
@@ -261,15 +242,25 @@ namespace CLRStroyBat {
 			this->главнаяToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.125F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->главнаяToolStripMenuItem->Name = L"главнаяToolStripMenuItem";
-			this->главнаяToolStripMenuItem->Size = System::Drawing::Size(136, 45);
+			this->главнаяToolStripMenuItem->Size = System::Drawing::Size(136, 41);
 			this->главнаяToolStripMenuItem->Text = L"Главная";
+			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(1790, 591);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(147, 93);
+			this->button2->TabIndex = 13;
+			this->button2->Text = L"Очистка таблиц";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &SmetaForm::button2_Click);
 			// 
 			// SmetaForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(2079, 874);
-			this->Controls->Add(this->button7);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->label6);
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
@@ -278,7 +269,6 @@ namespace CLRStroyBat {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->button5);
 			this->Controls->Add(this->button3);
-			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->menuStrip1);
@@ -321,6 +311,28 @@ namespace CLRStroyBat {
 		label4->Text = count.ToString();
 	}
 
+	public: void ChengeDataTextBox(String^ data1, String^ data2, String^ data3, String^ data4, String^ data5, String^ data6, String^ data7, String^ data8, String^ data9, String^ data10, double total)
+	{
+		array<String^>^ row = gcnew array<String^> {
+			data1,//номер
+				data2,//дата
+				data3,//наименование
+				data4,//тел
+				data5,//начало работ
+				data6,//окончание план
+				data7,//окончание работ
+				data8,//Доп инфа
+				data9,//Комы
+				data10,//Рекомендации
+		};
+		total;
+		db->openConnection();
+		db->ChangeSaveSmetaTextBoxs(data1, data2, data3, data4, total, data5, data6, data7);
+		dataGridView1->DataSource = db->getTableSmeta(dataGridView1);
+		db->closeConnection();
+		CountTable();
+	}
+
 	public: void GetDataTextBox(String^ data1, String^ data2, String^ data3, String^ data4, String^ data5, String^ data6, String^ data7, String^ data8, String^ data9, String^ data10, double total)
 	{
 		array<String^>^ row = gcnew array<String^> {
@@ -341,6 +353,7 @@ namespace CLRStroyBat {
 		dataGridView1->DataSource = db->getTableSmeta(dataGridView1);
 		db->closeConnection();
 		CountTable();
+		SumAndDisplayCosts();
 	}
 
 	private: System::Void SmetaForm_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -400,67 +413,6 @@ namespace CLRStroyBat {
 		f5->ShowDialog();
 	}
 
-	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
-
-
-		array<String^>^ product = {
-		"Телефоны", "Ноутбуки", "Автомобили", "Наушники" ,"Сладости"
-		};
-
-		try
-		{
-			auto word3 = gcnew Microsoft::Office::Interop::Word::Application();//всегда будет подсвечивать ошибку но компилирует
-			word3->Visible = true;//отображать прогу ворд
-			auto t = Type::Missing;// t иницилизируется пустым
-			auto document2 = word3->Documents->Add(t, t, t, t); //создаём пустую страницу ворда(документ)
-			word3->Selection->TypeText("\t\t\t\t\tСМЕТА");//в текущую позицию нахождения курсора записываем текст и курсор смещается каждый раз за последний введенный символ
-			Object^ t1 = Microsoft::Office::Interop::Word::WdDefaultTableBehavior::wdWord9TableBehavior;//в параметрах документа ворд указываем настройку отображать границы ячеек таблицы
-			Object^ t2 = Microsoft::Office::Interop::Word::WdAutoFitBehavior::wdAutoFitContent; // в параметрах документа Ворд указываем настройки автоматически изменять размер ячеек таблицы под
-			word3->ActiveDocument->Tables->Add(word3->Selection->Range, 6, 5, t1, t2);//записываемое в них содеримое и визуальным показом всех границ ячеек таблицы
-
-
-			//можно закинуть срузу всю таблицу не по отдельности!!!!!!!!!!!!!!!!!!!!
-
-			// Добавляем таблицу с заголовками столбцов
-			word3->ActiveDocument->Tables[1]->Cell(1, 1)->Range->Text = "N";
-			word3->ActiveDocument->Tables[1]->Cell(1, 2)->Range->Text = "Стоимость в течение полугода";
-			word3->ActiveDocument->Tables[1]->Cell(1, 3)->Range->Text = "Среднняя стоимость";
-			word3->ActiveDocument->Tables[1]->Cell(1, 4)->Range->Text = "Минимальная стоимость";
-			word3->ActiveDocument->Tables[1]->Cell(1, 5)->Range->Text = "Общая стоимость";
-
-			// Добавляем данные о книгах в таблицу
-			for (int row = 2; row <= 6; row++) {
-				try
-				{
-					word3->ActiveDocument->Tables[1]->Cell(row, 1)->Range->InsertAfter(product[row - 2]);
-					//word3->ActiveDocument->Tables[1]->Cell(row, 2)->Range->Text = dataGridView1->Rows[row - 2]->Cells[0]->Value->ToString();
-					//word3->ActiveDocument->Tables[1]->Cell(row, 3)->Range->Text = dataGridView1->Rows[row - 2]->Cells[1]->Value->ToString();
-					//word3->ActiveDocument->Tables[1]->Cell(row, 4)->Range->Text = dataGridView1->Rows[row - 2]->Cells[2]->Value->ToString();
-					//word3->ActiveDocument->Tables[1]->Cell(row, 5)->Range->Text = dataGridView1->Rows[row - 2]->Cells[3]->Value->ToString();
-				}
-				catch (System::Runtime::InteropServices::COMException^ eva)
-				{
-					MessageBox::Show(eva->Message);///в текстбокс1 помещаем сообщение об исключительной ситуации
-					row--;//раз итерация прервалась исклечительной ситуацией, то ее надо повторить, поэтому итерационную переменную уменьшаем, чтобы в следучщей итерации она имела текущее значение. Почему? J
-					//блок try-catch находится внутри цикла и преривает очередную итерацию цикла, но сам цикя продолжается в следующей итерации
-				}
-			}
-
-			Object^ t3 = Microsoft::Office::Interop::Word::WdUnits::wdLine; ////назначаем единицей измерения текста втекущем документе ОднУ строку
-			Int32^ str10 = 10; // динамическая целочисленная переменная декларируется и инициализируется 10 - ю, чтобы указывать на 10 - ю строку таблицы
-			word3->Selection->MoveDown(t3, str10, t);///переводим текущую позицию курсоря Selection за пределы табл в 10-ю строку, куда введем текст
-			word3->Selection->TypeText("\tВ таблице выше перечислены сведения о книгах. \
-		Было тяжело. \n\tНачало следующего абзаца текста.\n"); // в месте нахождения курсора напечатть текст
-			Object^ filename = "C:\\Users\\Захар\\source\\repos\\Laba27\\Шабуневич Захар Т-319.docx";///текучему у дркументу (написал полный путь файлу и указал имя расширение
-			word3->ActiveDocument->SaveAs(filename, t, t, t, t, t, t, t, t, t, t, t, t, t, t, t);//Если пользователь сохранит то он сохранит архивированных файла по нашему пути
-
-		}
-		catch (System::Exception^ eva)
-		{
-			MessageBox::Show(eva->Message);
-		}
-	}
-
 	private: System::Void dataGridView1_CellMouseDoubleClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellMouseEventArgs^ e) {
 
 		array<String^>^ dataNum = gcnew array<String^>(dataGridView1->RowCount);
@@ -485,14 +437,34 @@ namespace CLRStroyBat {
 			}
 		}
 
+		if (e->RowIndex >= 0)
+		{
 		String^ id = Convert::ToString(dataGridView1->Rows[e->RowIndex]->Cells["№"]->Value);
-		ADDForm^ f2 = gcnew ADDForm(id, data, dataNum);
+		ADDForm^ f2 = gcnew ADDForm(gcnew returnTextBoxData(this, &SmetaForm::ChengeDataTextBox), id, data, dataNum);
 		f2->ShowDialog();
+		}
+		else
+		{
+			MessageBox::Show("Повторите попытку.");
+		}
 
 	}
-
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
-
+		
+		auto result = MessageBox::Show(
+			"Вы действительно хотите выполнить очистку таблиц?",
+			"Подтвердите удаление",
+			MessageBoxButtons::YesNo,
+			MessageBoxIcon::Question);
+		if (result == System::Windows::Forms::DialogResult::Yes) {
+			db->openConnection();
+			db->clearEverythingTable();
+			db->getTableSmeta(dataGridView1);
+			db->closeConnection();
+			MessageBox::Show("Очистка выполнена.\nПерезапустите данное окно.");
+		}
+		
+		
 	}
-	};
+};
 }

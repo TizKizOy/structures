@@ -51,6 +51,9 @@
     <ClCompile Include="FormData.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="CountForm1.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PlitkaForm.h">
@@ -77,9 +80,6 @@
     <ClInclude Include="ADDForm.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="CountForm.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
     <ClInclude Include="AddWorkForm.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
@@ -91,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="FormData.h">
       <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="CountForm1.h">
+      <Filter>Исходные файлы</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
