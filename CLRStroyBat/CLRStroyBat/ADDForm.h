@@ -18,6 +18,8 @@ namespace CLRStroyBat {
 	/// </summary>
 	public ref class ADDForm : public System::Windows::Forms::Form
 	{
+	private:
+		Panel^ drawPanel;
 
 	public:
 		ADDForm(returnTextBoxData^ sender, String^ id, array<String^>^ data, array<String^>^ dataNum)
@@ -54,6 +56,29 @@ namespace CLRStroyBat {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column16;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column8;
+	private: System::Windows::Forms::TabPage^ tabPage3;
+	private: System::Windows::Forms::Label^ label18;
+
+	private: System::Windows::Forms::TextBox^ textBox12;
+	private: System::Windows::Forms::TextBox^ textBox11;
+	private: System::Windows::Forms::Label^ label17;
+	private: System::Windows::Forms::Label^ label16;
+	private: System::ComponentModel::BackgroundWorker^ backgroundWorker1;
+
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+	private: System::Windows::Forms::Label^ label19;
+	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::TextBox^ textBox14;
+	private: System::Windows::Forms::TextBox^ textBox13;
+	private: System::Windows::Forms::Label^ label21;
+	private: System::Windows::Forms::TextBox^ textBox15;
+	private: System::Windows::Forms::Label^ label20;
+	private: System::Windows::Forms::Label^ label25;
+	private: System::Windows::Forms::Label^ label24;
+	private: System::Windows::Forms::Label^ label23;
+	private: System::Windows::Forms::Label^ label22;
+
+
 
 
 
@@ -226,7 +251,33 @@ namespace CLRStroyBat {
 			this->treeView1 = (gcnew System::Windows::Forms::TreeView());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column16 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->label25 = (gcnew System::Windows::Forms::Label());
+			this->label24 = (gcnew System::Windows::Forms::Label());
+			this->label23 = (gcnew System::Windows::Forms::Label());
+			this->label22 = (gcnew System::Windows::Forms::Label());
+			this->label21 = (gcnew System::Windows::Forms::Label());
+			this->textBox15 = (gcnew System::Windows::Forms::TextBox());
+			this->label20 = (gcnew System::Windows::Forms::Label());
+			this->textBox14 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
+			this->label19 = (gcnew System::Windows::Forms::Label());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox11 = (gcnew System::Windows::Forms::TextBox());
+			this->label17 = (gcnew System::Windows::Forms::Label());
+			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->label11 = (gcnew System::Windows::Forms::Label());
@@ -244,19 +295,14 @@ namespace CLRStroyBat {
 			this->удалитьСтрокуToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column16 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Column8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->backgroundWorker1 = (gcnew System::ComponentModel::BackgroundWorker());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->tabPage2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
+			this->tabPage3->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->contextMenuStrip1->SuspendLayout();
 			this->SuspendLayout();
@@ -265,6 +311,7 @@ namespace CLRStroyBat {
 			// 
 			this->tabControl1->Controls->Add(this->tabPage1);
 			this->tabControl1->Controls->Add(this->tabPage2);
+			this->tabControl1->Controls->Add(this->tabPage3);
 			this->tabControl1->ItemSize = System::Drawing::Size(210, 31);
 			this->tabControl1->Location = System::Drawing::Point(358, 14);
 			this->tabControl1->Name = L"tabControl1";
@@ -432,9 +479,10 @@ namespace CLRStroyBat {
 				static_cast<System::Byte>(204)));
 			this->label1->Location = System::Drawing::Point(44, 62);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(327, 29);
+			this->label1->Size = System::Drawing::Size(266, 29);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Полное название клиента:\r\n";
+			this->label1->Text = L"Полное Имя клиента:\r\n";
+			this->label1->Click += gcnew System::EventHandler(this, &ADDForm::label1_Click);
 			// 
 			// tabPage2
 			// 
@@ -568,6 +616,70 @@ namespace CLRStroyBat {
 			this->dataGridView3->TabIndex = 4;
 			this->dataGridView3->CellMouseUp += gcnew System::Windows::Forms::DataGridViewCellMouseEventHandler(this, &ADDForm::dataGridView3_CellMouseUp);
 			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"Наименование";
+			this->Column2->MinimumWidth = 10;
+			this->Column2->Name = L"Column2";
+			this->Column2->ReadOnly = true;
+			this->Column2->Width = 200;
+			// 
+			// Column3
+			// 
+			this->Column3->HeaderText = L"Артикул";
+			this->Column3->MinimumWidth = 10;
+			this->Column3->Name = L"Column3";
+			this->Column3->ReadOnly = true;
+			this->Column3->Width = 200;
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"Цена руб.";
+			this->Column4->MinimumWidth = 10;
+			this->Column4->Name = L"Column4";
+			this->Column4->ReadOnly = true;
+			this->Column4->Width = 200;
+			// 
+			// Column6
+			// 
+			this->Column6->HeaderText = L"Ед.изм.";
+			this->Column6->MinimumWidth = 10;
+			this->Column6->Name = L"Column6";
+			this->Column6->ReadOnly = true;
+			this->Column6->Width = 200;
+			// 
+			// Column7
+			// 
+			this->Column7->HeaderText = L"Страна";
+			this->Column7->MinimumWidth = 10;
+			this->Column7->Name = L"Column7";
+			this->Column7->ReadOnly = true;
+			this->Column7->Width = 200;
+			// 
+			// Column16
+			// 
+			this->Column16->HeaderText = L"Цена $";
+			this->Column16->MinimumWidth = 10;
+			this->Column16->Name = L"Column16";
+			this->Column16->ReadOnly = true;
+			this->Column16->Width = 200;
+			// 
+			// Column5
+			// 
+			this->Column5->HeaderText = L"Бренд";
+			this->Column5->MinimumWidth = 10;
+			this->Column5->Name = L"Column5";
+			this->Column5->ReadOnly = true;
+			this->Column5->Width = 200;
+			// 
+			// Column8
+			// 
+			this->Column8->HeaderText = L"Количество";
+			this->Column8->MinimumWidth = 10;
+			this->Column8->Name = L"Column8";
+			this->Column8->ReadOnly = true;
+			this->Column8->Width = 200;
+			// 
 			// button2
 			// 
 			this->button2->Location = System::Drawing::Point(1458, 121);
@@ -577,6 +689,184 @@ namespace CLRStroyBat {
 			this->button2->Text = L"Работы";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &ADDForm::button2_Click);
+			// 
+			// tabPage3
+			// 
+			this->tabPage3->Controls->Add(this->label25);
+			this->tabPage3->Controls->Add(this->label24);
+			this->tabPage3->Controls->Add(this->label23);
+			this->tabPage3->Controls->Add(this->label22);
+			this->tabPage3->Controls->Add(this->label21);
+			this->tabPage3->Controls->Add(this->textBox15);
+			this->tabPage3->Controls->Add(this->label20);
+			this->tabPage3->Controls->Add(this->textBox14);
+			this->tabPage3->Controls->Add(this->textBox13);
+			this->tabPage3->Controls->Add(this->label19);
+			this->tabPage3->Controls->Add(this->button6);
+			this->tabPage3->Controls->Add(this->pictureBox1);
+			this->tabPage3->Controls->Add(this->label18);
+			this->tabPage3->Controls->Add(this->textBox12);
+			this->tabPage3->Controls->Add(this->textBox11);
+			this->tabPage3->Controls->Add(this->label17);
+			this->tabPage3->Controls->Add(this->label16);
+			this->tabPage3->Location = System::Drawing::Point(8, 39);
+			this->tabPage3->Name = L"tabPage3";
+			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage3->Size = System::Drawing::Size(1585, 792);
+			this->tabPage3->TabIndex = 2;
+			this->tabPage3->Text = L"Расчёт обкатываемой поверхности";
+			this->tabPage3->UseVisualStyleBackColor = true;
+			this->tabPage3->Click += gcnew System::EventHandler(this, &ADDForm::tabPage3_Click);
+			// 
+			// label25
+			// 
+			this->label25->AutoSize = true;
+			this->label25->Location = System::Drawing::Point(566, 653);
+			this->label25->Name = L"label25";
+			this->label25->Size = System::Drawing::Size(52, 25);
+			this->label25->TabIndex = 17;
+			this->label25->Text = L"кв2.";
+			// 
+			// label24
+			// 
+			this->label24->AutoSize = true;
+			this->label24->Location = System::Drawing::Point(465, 616);
+			this->label24->Name = L"label24";
+			this->label24->Size = System::Drawing::Size(45, 25);
+			this->label24->TabIndex = 16;
+			this->label24->Text = L"шт.";
+			// 
+			// label23
+			// 
+			this->label23->AutoSize = true;
+			this->label23->Location = System::Drawing::Point(446, 183);
+			this->label23->Name = L"label23";
+			this->label23->Size = System::Drawing::Size(56, 25);
+			this->label23->TabIndex = 15;
+			this->label23->Text = L"см2.";
+			// 
+			// label22
+			// 
+			this->label22->AutoSize = true;
+			this->label22->Location = System::Drawing::Point(633, 138);
+			this->label22->Name = L"label22";
+			this->label22->Size = System::Drawing::Size(33, 25);
+			this->label22->TabIndex = 14;
+			this->label22->Text = L"м.";
+			// 
+			// label21
+			// 
+			this->label21->AutoSize = true;
+			this->label21->Location = System::Drawing::Point(633, 93);
+			this->label21->Name = L"label21";
+			this->label21->Size = System::Drawing::Size(33, 25);
+			this->label21->TabIndex = 13;
+			this->label21->Text = L"м.";
+			// 
+			// textBox15
+			// 
+			this->textBox15->Location = System::Drawing::Point(336, 180);
+			this->textBox15->Name = L"textBox15";
+			this->textBox15->Size = System::Drawing::Size(100, 31);
+			this->textBox15->TabIndex = 12;
+			this->textBox15->TextChanged += gcnew System::EventHandler(this, &ADDForm::textBox15_TextChanged);
+			this->textBox15->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &ADDForm::textBox15_KeyPress);
+			// 
+			// label20
+			// 
+			this->label20->AutoSize = true;
+			this->label20->Location = System::Drawing::Point(42, 183);
+			this->label20->Name = L"label20";
+			this->label20->Size = System::Drawing::Size(270, 25);
+			this->label20->TabIndex = 11;
+			this->label20->Text = L"Введите площадь плитки:\r\n";
+			// 
+			// textBox14
+			// 
+			this->textBox14->Location = System::Drawing::Point(451, 650);
+			this->textBox14->Name = L"textBox14";
+			this->textBox14->ReadOnly = true;
+			this->textBox14->Size = System::Drawing::Size(100, 31);
+			this->textBox14->TabIndex = 10;
+			// 
+			// textBox13
+			// 
+			this->textBox13->Location = System::Drawing::Point(347, 613);
+			this->textBox13->Name = L"textBox13";
+			this->textBox13->ReadOnly = true;
+			this->textBox13->Size = System::Drawing::Size(100, 31);
+			this->textBox13->TabIndex = 9;
+			// 
+			// label19
+			// 
+			this->label19->AutoSize = true;
+			this->label19->Location = System::Drawing::Point(42, 653);
+			this->label19->Name = L"label19";
+			this->label19->Size = System::Drawing::Size(394, 50);
+			this->label19->TabIndex = 8;
+			this->label19->Text = L"Площадь обкатываемой поверхности:\r\n\r\n";
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(248, 347);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(165, 67);
+			this->button6->TabIndex = 7;
+			this->button6->Text = L"Рассчитать";
+			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &ADDForm::button6_Click);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Location = System::Drawing::Point(687, 31);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(881, 647);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::Zoom;
+			this->pictureBox1->TabIndex = 6;
+			this->pictureBox1->TabStop = false;
+			// 
+			// label18
+			// 
+			this->label18->AutoSize = true;
+			this->label18->Location = System::Drawing::Point(42, 616);
+			this->label18->Name = L"label18";
+			this->label18->Size = System::Drawing::Size(290, 25);
+			this->label18->TabIndex = 5;
+			this->label18->Text = L"Нужное количетсво плитки:\r\n";
+			// 
+			// textBox12
+			// 
+			this->textBox12->Location = System::Drawing::Point(527, 135);
+			this->textBox12->Name = L"textBox12";
+			this->textBox12->Size = System::Drawing::Size(100, 31);
+			this->textBox12->TabIndex = 3;
+			this->textBox12->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &ADDForm::textBox12_KeyPress);
+			// 
+			// textBox11
+			// 
+			this->textBox11->Location = System::Drawing::Point(527, 90);
+			this->textBox11->Name = L"textBox11";
+			this->textBox11->Size = System::Drawing::Size(100, 31);
+			this->textBox11->TabIndex = 2;
+			this->textBox11->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &ADDForm::textBox11_KeyPress);
+			// 
+			// label17
+			// 
+			this->label17->AutoSize = true;
+			this->label17->Location = System::Drawing::Point(42, 141);
+			this->label17->Name = L"label17";
+			this->label17->Size = System::Drawing::Size(468, 25);
+			this->label17->TabIndex = 1;
+			this->label17->Text = L"Введите ширину обкатываемой поверхности:";
+			// 
+			// label16
+			// 
+			this->label16->AutoSize = true;
+			this->label16->Location = System::Drawing::Point(42, 96);
+			this->label16->Name = L"label16";
+			this->label16->Size = System::Drawing::Size(451, 25);
+			this->label16->TabIndex = 0;
+			this->label16->Text = L"Введите длину обкатываемой поверхности:";
 			// 
 			// label9
 			// 
@@ -716,7 +1006,6 @@ namespace CLRStroyBat {
 			this->удалитьСтрокуToolStripMenuItem->Name = L"удалитьСтрокуToolStripMenuItem";
 			this->удалитьСтрокуToolStripMenuItem->Size = System::Drawing::Size(256, 38);
 			this->удалитьСтрокуToolStripMenuItem->Text = L"Удалить строку";
-			this->удалитьСтрокуToolStripMenuItem->Click += gcnew System::EventHandler(this, &ADDForm::удалитьСтрокуToolStripMenuItem_Click);
 			// 
 			// button7
 			// 
@@ -737,70 +1026,6 @@ namespace CLRStroyBat {
 			this->button1->Text = L"Изменить";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &ADDForm::button1_Click);
-			// 
-			// Column2
-			// 
-			this->Column2->HeaderText = L"Наименование";
-			this->Column2->MinimumWidth = 10;
-			this->Column2->Name = L"Column2";
-			this->Column2->ReadOnly = true;
-			this->Column2->Width = 200;
-			// 
-			// Column3
-			// 
-			this->Column3->HeaderText = L"Артикул";
-			this->Column3->MinimumWidth = 10;
-			this->Column3->Name = L"Column3";
-			this->Column3->ReadOnly = true;
-			this->Column3->Width = 200;
-			// 
-			// Column4
-			// 
-			this->Column4->HeaderText = L"Цена руб.";
-			this->Column4->MinimumWidth = 10;
-			this->Column4->Name = L"Column4";
-			this->Column4->ReadOnly = true;
-			this->Column4->Width = 200;
-			// 
-			// Column6
-			// 
-			this->Column6->HeaderText = L"Ед.изм.";
-			this->Column6->MinimumWidth = 10;
-			this->Column6->Name = L"Column6";
-			this->Column6->ReadOnly = true;
-			this->Column6->Width = 200;
-			// 
-			// Column7
-			// 
-			this->Column7->HeaderText = L"Страна";
-			this->Column7->MinimumWidth = 10;
-			this->Column7->Name = L"Column7";
-			this->Column7->ReadOnly = true;
-			this->Column7->Width = 200;
-			// 
-			// Column16
-			// 
-			this->Column16->HeaderText = L"Цена $";
-			this->Column16->MinimumWidth = 10;
-			this->Column16->Name = L"Column16";
-			this->Column16->ReadOnly = true;
-			this->Column16->Width = 200;
-			// 
-			// Column5
-			// 
-			this->Column5->HeaderText = L"Бренд";
-			this->Column5->MinimumWidth = 10;
-			this->Column5->Name = L"Column5";
-			this->Column5->ReadOnly = true;
-			this->Column5->Width = 200;
-			// 
-			// Column8
-			// 
-			this->Column8->HeaderText = L"Количество";
-			this->Column8->MinimumWidth = 10;
-			this->Column8->Name = L"Column8";
-			this->Column8->ReadOnly = true;
-			this->Column8->Width = 200;
 			// 
 			// ADDForm
 			// 
@@ -828,6 +1053,9 @@ namespace CLRStroyBat {
 			this->tabPage2->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
+			this->tabPage3->ResumeLayout(false);
+			this->tabPage3->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->contextMenuStrip1->ResumeLayout(false);
@@ -913,9 +1141,9 @@ namespace CLRStroyBat {
 	}
 
 
-		  // Метод для загрузки данных из базы данных и заполнения формы
+		// Метод для загрузки данных из базы данных и заполнения формы
 	public: void DataFromDatabaseTextBoxs() {
-		SqlConnection^ Con = gcnew SqlConnection("Data Source=TIZKIZOY\\SQLEXPRESS;Initial Catalog=Plitka;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+		SqlConnection^ Con = gcnew SqlConnection("Data Source=TIZKIZOY\\SQLEXPRESS;Initial Catalog=PlitkaBase;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 		try {
 			Con->Open();
 			String^ query = "SELECT * FROM SaveTextBoxs WHERE [idusd] = @dataId";
@@ -950,7 +1178,7 @@ namespace CLRStroyBat {
 
 	public:  void DataFromDatabaseWorks()
 	{
-		SqlConnection^ Con = gcnew SqlConnection("Data Source=TIZKIZOY\\SQLEXPRESS;Initial Catalog=Plitka;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+		SqlConnection^ Con = gcnew SqlConnection("Data Source=TIZKIZOY\\SQLEXPRESS;Initial Catalog=PlitkaBase;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 		try {
 			Con->Open();
 			// SQL запрос для получения данных
@@ -993,7 +1221,7 @@ namespace CLRStroyBat {
 
 	public:  void DataFromDatabaseMaterials()
 	{
-		SqlConnection^ Con = gcnew SqlConnection("Data Source=TIZKIZOY\\SQLEXPRESS;Initial Catalog=Plitka;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+		SqlConnection^ Con = gcnew SqlConnection("Data Source=TIZKIZOY\\SQLEXPRESS;Initial Catalog=PlitkaBase;Integrated Security=True;Connect Timeout=30;Encrypt=True;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 		try {
 			Con->Open();
 			// SQL запрос для получения данных
@@ -1034,7 +1262,7 @@ namespace CLRStroyBat {
 		}
 	}
 
-	public: void GetDataWork(DataGridViewRow^ returnedRow,String^ dataNum)
+	public: void GetDataWork(DataGridViewRow^ returnedRow, String^ dataNum)
 	{
 		bool FoundRow = true;
 		array<String^>^ columnData = gcnew array<String^>(dataGridView1->Rows->Count - 1);
@@ -1226,9 +1454,6 @@ namespace CLRStroyBat {
 			this->ShowCMS(e);
 		}
 	}
-	private: System::Void удалитьСтрокуToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-		//////////////// надо как-то сделать
-	}
 
 	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -1335,10 +1560,10 @@ namespace CLRStroyBat {
 					word3->ActiveDocument->Tables[2]->Cell(1, 9)->Range->Text = "Количество";
 
 					int b = 1;
-					for (int i = 0; i < dataGridView1->RowCount - 1; i++)
+					for (int i = 0; i < dataGridView3->RowCount - 1; i++)
 					{
 						word3->ActiveDocument->Tables[2]->Cell(i + 2, 1)->Range->Text = b++.ToString();
-						for (int j = 0; j < dataGridView1->ColumnCount; j++)
+						for (int j = 0; j < dataGridView3->ColumnCount; j++)
 						{
 							word3->ActiveDocument->Tables[2]->Cell(i + 2, j + 2)->Range->Text = dataGridView3->Rows[i]->Cells[j]->Value->ToString();
 						}
@@ -1419,5 +1644,72 @@ namespace CLRStroyBat {
 			MessageBox::Show("Вы не оформляли смету с таким номер.\n Чтобы внести изменения нужно сначала оформить смету.");
 		}
 	}
-	};
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+		double length = Convert::ToDouble(textBox11->Text);
+		double height = Convert::ToDouble(textBox12->Text);
+		double plitka = Convert::ToDouble(textBox15->Text);
+
+		double area = length * height;
+
+		double result = area / plitka;
+		result = result * 10;
+
+		textBox13->Text = result.ToString();
+		textBox14->Text = area.ToString();
+
+		int centerX = pictureBox1->Width / 2;
+		int centerY = pictureBox1->Height / 2;
+
+		Pen^ myPen = gcnew Pen(Color::Blue, 2);
+		Graphics^ myGraphics = pictureBox1->CreateGraphics();
+
+
+		myGraphics->DrawRectangle(myPen,
+			centerX, centerY,
+			length * 10, height * 10);
+	}
+
+	private: System::Void textBox11_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Проверяем нажатую клавишу
+		Char keyPressed = e->KeyChar;
+		String^ textBoxValue = textBox11->Text;
+
+		// Проверяем, является ли символ числом или управляющим символом (например, Backspace)
+		if (!Char::IsDigit(keyPressed) && keyPressed != 0x08)
+		{
+			e->Handled = true; // Отменяем ввод символа
+			MessageBox::Show("Введите целое число.");
+		}
+	}
+	private: System::Void textBox12_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Проверяем нажатую клавишу
+		Char keyPressed = e->KeyChar;
+		String^ textBoxValue = textBox9->Text;
+
+		// Проверяем, является ли символ числом или управляющим символом (например, Backspace)
+		if (!Char::IsDigit(keyPressed) && keyPressed != 0x08)
+		{
+			e->Handled = true; // Отменяем ввод символа
+			MessageBox::Show("Введите целое число.");
+		}
+	}
+	private: System::Void textBox15_KeyPress(System::Object^ sender, System::Windows::Forms::KeyPressEventArgs^ e) {
+		// Проверяем нажатую клавишу
+		Char keyPressed = e->KeyChar;
+		String^ textBoxValue = textBox9->Text;
+
+		// Проверяем, является ли символ числом или управляющим символом (например, Backspace)
+		//if (!Double::Try(keyPressed) && keyPressed != 0x08)
+		//{
+		//	e->Handled = true; // Отменяем ввод символа
+		//	MessageBox::Show("Введите целое число.");
+		//}
+	}
+	private: System::Void tabPage3_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox15_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+};
 }

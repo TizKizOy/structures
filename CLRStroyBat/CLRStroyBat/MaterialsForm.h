@@ -525,6 +525,5 @@ namespace CLRStroyBat {
 			db->closeConnection();
 		}
 	}
-
 };
 }

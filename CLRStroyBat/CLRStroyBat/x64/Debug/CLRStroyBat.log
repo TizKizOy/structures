@@ -1,67 +1,82 @@
 ﻿  ADDForm.cpp
-C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1280,1): warning C4309: инициализация: усечение константного значения
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1505,1): warning C4309: инициализация: усечение константного значения
   (компиляция исходного файла "ADDForm.cpp")
-  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1280,1):
+  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1505,1):
   Сообщение диагностики возникло при импорте типа "Microsoft::Office::Interop::Word::Selection" из сборки "Interop.Microsoft.Office.Interop.Word.8.7, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null".
   
-C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1284,1): warning C4309: инициализация: усечение константного значения
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1509,1): warning C4309: инициализация: усечение константного значения
   (компиляция исходного файла "ADDForm.cpp")
-  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1284,1):
+  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1509,1):
   Сообщение диагностики возникло при импорте типа "Microsoft::Office::Interop::Word::_Document" из сборки "Interop.Microsoft.Office.Interop.Word.8.7, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null".
-  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1284,1):
+  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1509,1):
   Сообщение диагностики возникло при импорте типа "Microsoft::Office::Interop::Word::Document" из сборки "Interop.Microsoft.Office.Interop.Word.8.7, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null".
   
-C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1288,1): warning C4309: инициализация: усечение константного значения
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1513,1): warning C4309: инициализация: усечение константного значения
   (компиляция исходного файла "ADDForm.cpp")
-  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1288,1):
+  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1513,1):
   Сообщение диагностики возникло при импорте типа "Microsoft::Office::Interop::Word::Range" из сборки "Interop.Microsoft.Office.Interop.Word.8.7, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null".
   
-C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1356,17): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1581,17): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
   (компиляция исходного файла "ADDForm.cpp")
   
-  AddMaterialForm.cpp
-  AddWorkForm.cpp
-  CountForm.cpp
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1669,24): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+  (компиляция исходного файла "ADDForm.cpp")
+  
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1669,11): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+  (компиляция исходного файла "ADDForm.cpp")
+  
   MenuForm.cpp
-C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1280,1): warning C4309: инициализация: усечение константного значения
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1505,1): warning C4309: инициализация: усечение константного значения
   (компиляция исходного файла "MenuForm.cpp")
-  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1280,1):
+  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1505,1):
   Сообщение диагностики возникло при импорте типа "Microsoft::Office::Interop::Word::Selection" из сборки "Interop.Microsoft.Office.Interop.Word.8.7, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null".
   
-C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1284,1): warning C4309: инициализация: усечение константного значения
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1509,1): warning C4309: инициализация: усечение константного значения
   (компиляция исходного файла "MenuForm.cpp")
-  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1284,1):
+  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1509,1):
   Сообщение диагностики возникло при импорте типа "Microsoft::Office::Interop::Word::_Document" из сборки "Interop.Microsoft.Office.Interop.Word.8.7, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null".
-  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1284,1):
+  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1509,1):
   Сообщение диагностики возникло при импорте типа "Microsoft::Office::Interop::Word::Document" из сборки "Interop.Microsoft.Office.Interop.Word.8.7, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null".
   
-C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1288,1): warning C4309: инициализация: усечение константного значения
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1513,1): warning C4309: инициализация: усечение константного значения
   (компиляция исходного файла "MenuForm.cpp")
-  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1288,1):
+  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1513,1):
   Сообщение диагностики возникло при импорте типа "Microsoft::Office::Interop::Word::Range" из сборки "Interop.Microsoft.Office.Interop.Word.8.7, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null".
   
-C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1356,17): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1581,17): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  (компиляция исходного файла "MenuForm.cpp")
+  
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1669,24): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+  (компиляция исходного файла "MenuForm.cpp")
+  
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1669,11): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
   (компиляция исходного файла "MenuForm.cpp")
   
   SmetaForm.cpp
-C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1280,1): warning C4309: инициализация: усечение константного значения
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1505,1): warning C4309: инициализация: усечение константного значения
   (компиляция исходного файла "SmetaForm.cpp")
-  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1280,1):
+  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1505,1):
   Сообщение диагностики возникло при импорте типа "Microsoft::Office::Interop::Word::Selection" из сборки "Interop.Microsoft.Office.Interop.Word.8.7, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null".
   
-C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1284,1): warning C4309: инициализация: усечение константного значения
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1509,1): warning C4309: инициализация: усечение константного значения
   (компиляция исходного файла "SmetaForm.cpp")
-  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1284,1):
+  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1509,1):
   Сообщение диагностики возникло при импорте типа "Microsoft::Office::Interop::Word::_Document" из сборки "Interop.Microsoft.Office.Interop.Word.8.7, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null".
-  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1284,1):
+  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1509,1):
   Сообщение диагностики возникло при импорте типа "Microsoft::Office::Interop::Word::Document" из сборки "Interop.Microsoft.Office.Interop.Word.8.7, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null".
   
-C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1288,1): warning C4309: инициализация: усечение константного значения
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1513,1): warning C4309: инициализация: усечение константного значения
   (компиляция исходного файла "SmetaForm.cpp")
-  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1288,1):
+  C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1513,1):
   Сообщение диагностики возникло при импорте типа "Microsoft::Office::Interop::Word::Range" из сборки "Interop.Microsoft.Office.Interop.Word.8.7, Version=8.7.0.0, Culture=neutral, PublicKeyToken=null".
   
-C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1356,17): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1581,17): warning C4244: инициализация: преобразование "double" в "int", возможна потеря данных
+  (компиляция исходного файла "SmetaForm.cpp")
+  
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1669,24): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+  (компиляция исходного файла "SmetaForm.cpp")
+  
+C:\Users\Захар\source\repos\CLRStroyBat\CLRStroyBat\ADDForm.h(1669,11): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
   (компиляция исходного файла "SmetaForm.cpp")
   
   Создание кода...

@@ -114,19 +114,19 @@ namespace CLRStroyBat {
 	private: System::Windows::Forms::Label^ label19;
 	private: System::Windows::Forms::Label^ label18;
 	private: System::Windows::Forms::Label^ label17;
-private: System::Windows::Forms::FontDialog^ fontDialog1;
-private: System::Windows::Forms::Label^ label26;
-private: System::Windows::Forms::Label^ label25;
-private: System::Windows::Forms::Label^ label23;
-private: System::Windows::Forms::TextBox^ textBox9;
-private: System::Windows::Forms::TextBox^ textBox8;
-private: System::Windows::Forms::TextBox^ textBox7;
-private: System::Windows::Forms::Label^ label28;
-private: System::Windows::Forms::Label^ label27;
-private: System::Windows::Forms::Label^ label24;
-private: System::Windows::Forms::Label^ label30;
-private: System::Windows::Forms::TextBox^ textBox10;
-private: System::Windows::Forms::Label^ label29;
+	private: System::Windows::Forms::FontDialog^ fontDialog1;
+	private: System::Windows::Forms::Label^ label26;
+	private: System::Windows::Forms::Label^ label25;
+	private: System::Windows::Forms::Label^ label23;
+	private: System::Windows::Forms::TextBox^ textBox9;
+	private: System::Windows::Forms::TextBox^ textBox8;
+	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::Label^ label28;
+	private: System::Windows::Forms::Label^ label27;
+	private: System::Windows::Forms::Label^ label24;
+	private: System::Windows::Forms::Label^ label30;
+	private: System::Windows::Forms::TextBox^ textBox10;
+	private: System::Windows::Forms::Label^ label29;
 
 
 
@@ -142,7 +142,7 @@ private: System::Windows::Forms::Label^ label29;
 		/// <summary>
 		/// Обязательная переменная конструктора.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -267,7 +267,6 @@ private: System::Windows::Forms::Label^ label29;
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Основное";
 			this->tabPage1->UseVisualStyleBackColor = true;
-			this->tabPage1->Click += gcnew System::EventHandler(this, &SettingsForm::tabPage1_Click);
 			// 
 			// checkBox2
 			// 
@@ -318,7 +317,6 @@ private: System::Windows::Forms::Label^ label29;
 			this->label1->Size = System::Drawing::Size(335, 33);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"При старте программы:";
-			this->label1->Click += gcnew System::EventHandler(this, &SettingsForm::label1_Click);
 			// 
 			// tabPage2
 			// 
@@ -473,7 +471,6 @@ private: System::Windows::Forms::Label^ label29;
 			this->textBox1->Size = System::Drawing::Size(216, 41);
 			this->textBox1->TabIndex = 16;
 			this->textBox1->Text = L"Себестоимость";
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &SettingsForm::textBox1_TextChanged);
 			// 
 			// label12
 			// 
@@ -1052,7 +1049,6 @@ private: System::Windows::Forms::Label^ label29;
 			// 
 			// fontDialog1
 			// 
-			this->fontDialog1->Apply += gcnew System::EventHandler(this, &SettingsForm::fontDialog1_Apply);
 			// 
 			// SettingsForm
 			// 
@@ -1094,50 +1090,22 @@ private: System::Windows::Forms::Label^ label29;
 	private: System::Void SettingsForm_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->Text = "Настройки рабочего места";
 	}
-	private: System::Void tabPage1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		System::Windows::Forms::DialogResult eva = colorDialog1->ShowDialog();
+		if (eva == System::Windows::Forms::DialogResult::OK) {
+			this->BackColor = colorDialog1->Color;
+		}
 	}
-private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-	System::Windows::Forms::DialogResult eva = colorDialog1->ShowDialog();
-	if (eva == System::Windows::Forms::DialogResult::OK) {
-		this->BackColor = colorDialog1->Color;
+	private: System::Void splitContainer1_Panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+		this->Text = "Себестоимость";
 	}
-
-}
-private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void radioButton3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void splitContainer1_Panel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
-	this->Text = "Себестоимость";
-
-}
-private: System::Void label6_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void numericUpDown1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void groupBox4_Enter(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void fontDialog1_Apply(System::Object^ sender, System::EventArgs^ e) {
-	//fontDialog1.ShowColor = true;
-
-	//fontDialog1.Font = textBox1.Font;
-	//fontDialog1.Color = textBox1.ForeColor;
-
-	//if (fontDialog1.ShowDialog() != DialogResult.Cancel)
-	//{
-	//	textBox1.Font = fontDialog1.Font;
-	//	textBox1.ForeColor = fontDialog1.Color;
-	//}
-}
-private: System::Void label25_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Close();
-}
-};
+	private: System::Void label25_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Close();
+	}
+	};
 }

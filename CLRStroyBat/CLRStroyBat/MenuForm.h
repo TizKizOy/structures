@@ -74,6 +74,8 @@ namespace CLRStroyBat {
 	private: System::Windows::Forms::ToolStripMenuItem^ выходToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ настройкаРабочегоМестаToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^ изменениеКурсаВалютToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^ справкаToolStripMenuItem;
+
 	protected:
 
 	private:
@@ -99,6 +101,7 @@ namespace CLRStroyBat {
 			this->материалыToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->настройкиToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->выходToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->справкаToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -106,10 +109,10 @@ namespace CLRStroyBat {
 			// 
 			this->menuStrip1->GripMargin = System::Windows::Forms::Padding(2, 2, 0, 2);
 			this->menuStrip1->ImageScalingSize = System::Drawing::Size(32, 32);
-			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(6) {
+			this->menuStrip1->Items->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(7) {
 				this->основноеToolStripMenuItem,
 					this->сметыToolStripMenuItem1, this->работыToolStripMenuItem, this->материалыToolStripMenuItem, this->настройкиToolStripMenuItem,
-					this->выходToolStripMenuItem
+					this->выходToolStripMenuItem, this->справкаToolStripMenuItem
 			});
 			this->menuStrip1->Location = System::Drawing::Point(0, 0);
 			this->menuStrip1->Name = L"menuStrip1";
@@ -129,7 +132,6 @@ namespace CLRStroyBat {
 			this->основноеToolStripMenuItem->Name = L"основноеToolStripMenuItem";
 			this->основноеToolStripMenuItem->Size = System::Drawing::Size(178, 45);
 			this->основноеToolStripMenuItem->Text = L"Главная";
-			this->основноеToolStripMenuItem->Click += gcnew System::EventHandler(this, &MenuForm::основноеToolStripMenuItem_Click);
 			// 
 			// настройкаРабочегоМестаToolStripMenuItem
 			// 
@@ -190,6 +192,16 @@ namespace CLRStroyBat {
 			this->выходToolStripMenuItem->Text = L"Выход";
 			this->выходToolStripMenuItem->Click += gcnew System::EventHandler(this, &MenuForm::выходToolStripMenuItem_Click);
 			// 
+			// справкаToolStripMenuItem
+			// 
+			this->справкаToolStripMenuItem->Font = (gcnew System::Drawing::Font(L"Segoe UI", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->справкаToolStripMenuItem->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"справкаToolStripMenuItem.Image")));
+			this->справкаToolStripMenuItem->Name = L"справкаToolStripMenuItem";
+			this->справкаToolStripMenuItem->Size = System::Drawing::Size(180, 45);
+			this->справкаToolStripMenuItem->Text = L"Справка";
+			this->справкаToolStripMenuItem->Click += gcnew System::EventHandler(this, &MenuForm::справкаToolStripMenuItem_Click);
+			// 
 			// MenuForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
@@ -209,9 +221,6 @@ namespace CLRStroyBat {
 
 		}
 #pragma endregion	
-	private: System::Void основноеToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-
 	private: System::Void сметыToolStripMenuItem1_Click(System::Object^ sender, System::EventArgs^ e) {
 		SmetaForm^ f3 = gcnew SmetaForm();
 		f3->Show();
@@ -241,23 +250,8 @@ namespace CLRStroyBat {
 	}
 
 	private: System::Void работыToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
-
-		/*OpenChildForm(sender, e);*/
-
 		WorkForm^ f1 = gcnew WorkForm();
-		f1->Show();
-		//MenuForm^ f6 = gcnew MenuForm();
-		//// Создайте дочернюю форму
-
-		//f6->TopLevel = false;
-		////f6->Parent = f1; // где parentForm - это родительская форма
-		////f6->StartPosition = FormStartPosition::CenterParent;
-		////f1->Controls->Add(f6);
-
-		//// Обеспечьте границы дочерней формы в пределах родительской формы
-		//f6->MaximumSize = f1->ClientSize;
-		//f6->MinimumSize = f1->ClientSize;
-		//f1->Show();
+		f1->Show();;
 	}
 
 	private: System::Void материалыToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -290,7 +284,14 @@ namespace CLRStroyBat {
 		}
 		else f5->Show();
 	}
-private: System::Void menuStrip1_ItemClicked(System::Object^ sender, System::Windows::Forms::ToolStripItemClickedEventArgs^ e) {
-}
+	private: System::Void menuStrip1_ItemClicked(System::Object^ sender, System::Windows::Forms::ToolStripItemClickedEventArgs^ e) {
+	}
+	private: System::Void справкаToolStripMenuItem_Click(System::Object^ sender, System::EventArgs^ e) {
+		MessageBox::Show("- Для составления сметы необходимо выбрать кнопку на панеле меню 'Сметы'. На вспывающем окне выбрать кпопку 'Добавить', заполнить поля данными и нажать кнопку 'Оформить'. После чего таблица будет заполнена новой строкой. При двойном нажатии на строку в таблице будет загружено окно добавления в котором будут отображены ранее записаные данные. Для их изменения нужно выбрать кнопку 'Изменить.'"
+			+ "\n- Для просмотра существующих позиций выбора материала или работ требуется выбрать соответствующую кпоку 'Работы' или 'Материалы'."
+			+ "\n- Для настройки интерфейса рабочего места нужно выбрать кнопку 'Настройки' и выбрать нужный параметр для изменения."
+			+ "\n- Для выхода из приложения необходимо выбрать соответствующую кнопку 'Выход' после чего приложение будет закрыто."
+			, "Справочник");
+	}
 };
 }
