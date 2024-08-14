@@ -1,0 +1,14 @@
+C:\Users\Захар\source\repos\Qyeue\Qyeue\bin\Debug\net8.0\Qyeue.exe
+C:\Users\Захар\source\repos\Qyeue\Qyeue\bin\Debug\net8.0\Qyeue.deps.json
+C:\Users\Захар\source\repos\Qyeue\Qyeue\bin\Debug\net8.0\Qyeue.runtimeconfig.json
+C:\Users\Захар\source\repos\Qyeue\Qyeue\bin\Debug\net8.0\Qyeue.dll
+C:\Users\Захар\source\repos\Qyeue\Qyeue\bin\Debug\net8.0\Qyeue.pdb
+C:\Users\Захар\source\repos\Qyeue\Qyeue\obj\Debug\net8.0\Qyeue.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Захар\source\repos\Qyeue\Qyeue\obj\Debug\net8.0\Qyeue.AssemblyInfoInputs.cache
+C:\Users\Захар\source\repos\Qyeue\Qyeue\obj\Debug\net8.0\Qyeue.AssemblyInfo.cs
+C:\Users\Захар\source\repos\Qyeue\Qyeue\obj\Debug\net8.0\Qyeue.csproj.CoreCompileInputs.cache
+C:\Users\Захар\source\repos\Qyeue\Qyeue\obj\Debug\net8.0\Qyeue.dll
+C:\Users\Захар\source\repos\Qyeue\Qyeue\obj\Debug\net8.0\refint\Qyeue.dll
+C:\Users\Захар\source\repos\Qyeue\Qyeue\obj\Debug\net8.0\Qyeue.pdb
+C:\Users\Захар\source\repos\Qyeue\Qyeue\obj\Debug\net8.0\Qyeue.genruntimeconfig.cache
+C:\Users\Захар\source\repos\Qyeue\Qyeue\obj\Debug\net8.0\ref\Qyeue.dll
